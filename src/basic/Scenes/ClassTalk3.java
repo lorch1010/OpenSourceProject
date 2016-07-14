@@ -1,17 +1,18 @@
-package basic;
+package basic.Scenes;
+import basic.DialogueBuilder;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 
-public class ClassTalk2 extends Group {
+public class ClassTalk3 extends Group {
 	// initialize global variables
-private DialogueBuilder dialogue;
+	private DialogueBuilder dialogue;
     
     // class constructor
-	public ClassTalk2(){
-		String content = "You'll also have to learn how to address the relationships between each other because grades are not everything, as a matter of fact...";
+	public ClassTalk3(){
+		String content = "Hope you would have a happy and meaningful high school life.";
 		dialogue = new DialogueBuilder(content);
 		create();
 		getChildren().add(dialogue);
@@ -30,4 +31,5 @@ private DialogueBuilder dialogue;
 		getChildren().add(canvas);
 	}
 }
+
 

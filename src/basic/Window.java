@@ -1,4 +1,11 @@
 package basic;
+import basic.Scenes.ClassOver_1;
+import basic.Scenes.ClassOver_2;
+import basic.Scenes.ClassTalk;
+import basic.Scenes.ClassTalk2;
+import basic.Scenes.ClassTalk3;
+import basic.Scenes.Classroom;
+import basic.Scenes.GameStart;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -25,9 +32,6 @@ public class Window extends Application{
 	Button exitButton;
    	Stage theStage;
 	Scene beginScene;
-	//Scene classScene;
-	//Scene talkScene;
-	//Scene talkScene2;
 	
 
 	public static void main(String[] args){
@@ -165,6 +169,9 @@ public class Window extends Application{
 	    Scene talkScene = new Scene(new ClassTalk());
 	    Scene talkScene2 = new Scene(new ClassTalk2());
 	    Scene talkScene3 = new Scene(new ClassTalk3());
+	    Scene classOver1 = new Scene(new ClassOver_1());
+	    Scene classOver2 = new Scene(new ClassOver_2());
+	    
 	    beginScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
   	    	@Override
   	    	public void handle(MouseEvent mouseEvent){
@@ -202,8 +209,26 @@ public class Window extends Application{
   	    	}
   	    });
 	    
+	    talkScene3.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver1);
+  	    		}
+  	    	}
+  	    });
 	    
-	     
+	    classOver1.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver2);
+  	    		}
+  	    	}
+  	    });
+	    
+	    
+	    
             
 	    primaryStage.show();    
 	}
