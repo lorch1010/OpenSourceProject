@@ -25,9 +25,9 @@ public class Window extends Application{
 	Button exitButton;
    	Stage theStage;
 	Scene beginScene;
-	Scene classScene;
-	Scene talkScene;
-	Scene talkScene2;
+	//Scene classScene;
+	//Scene talkScene;
+	//Scene talkScene2;
 	
 
 	public static void main(String[] args){
@@ -161,9 +161,9 @@ public class Window extends Application{
 	    Scene theScene = new Scene(root);  
 	    primaryStage.setScene(theScene);
 	    beginScene = new Scene(new GameStart());
-	    classScene = new Scene(new Classroom());
-	    talkScene = new Scene(new ClassTalk());
-	    talkScene2 = new Scene(new ClassTalk2());
+	    Scene classScene = new Scene(new Classroom());
+	    Scene talkScene = new Scene(new ClassTalk());
+	    Scene talkScene2 = new Scene(new ClassTalk2());
 	    Scene talkScene3 = new Scene(new ClassTalk3());
 	    beginScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
   	    	@Override
