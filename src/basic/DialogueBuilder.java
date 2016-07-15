@@ -20,16 +20,16 @@ import javafx.beans.value.ObservableValue;
 public class DialogueBuilder extends Group{
 	// declare global variables
 	final double BASE_WIDTH = 1280;
-    final double BASE_HEIGHT = 720;
-    final double MARGIN = 25;
+	final double BASE_HEIGHT = 720;
+	final double MARGIN = 25;
    
 	// fields 
-    private String nameContent;
-    private String content;
-    private Rectangle nameRect = new Rectangle();
+   	private String nameContent;
+	private String content;
+	private Rectangle nameRect = new Rectangle();
 	private Rectangle rect = new Rectangle();
 	private Text nameText = new Text(65, 440, "");
- 	private Text text = new Text();
+	private Text text = new Text();
 	private Timeline timeline = new Timeline();
     
 	// constructor

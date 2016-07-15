@@ -1,6 +1,23 @@
 package basic;
 import basic.Scenes.ClassOver_1;
 import basic.Scenes.ClassOver_2;
+import basic.Scenes.ClassOver_3;
+import basic.Scenes.ClassOver_4;
+import basic.Scenes.ClassOver_5;
+import basic.Scenes.ClassOver_6;
+import basic.Scenes.ClassOver_7;
+import basic.Scenes.ClassOver_8;
+import basic.Scenes.ClassOver_9;
+import basic.Scenes.ClassOver_10;
+import basic.Scenes.ClassOver_11;
+import basic.Scenes.ClassOver_12;
+import basic.Scenes.ClassOver_13;
+import basic.Scenes.ClassOver_14;
+import basic.Scenes.ClassOver_15;
+import basic.Scenes.ClassOver_16;
+import basic.Scenes.ClassOver_17;
+import basic.Scenes.ClassOver_18;
+import basic.Scenes.ClassOver_19;
 import basic.Scenes.ClassTalk;
 import basic.Scenes.ClassTalk2;
 import basic.Scenes.ClassTalk3;
@@ -171,6 +188,24 @@ public class Window extends Application{
 	    Scene talkScene3 = new Scene(new ClassTalk3());
 	    Scene classOver1 = new Scene(new ClassOver_1());
 	    Scene classOver2 = new Scene(new ClassOver_2());
+	    Scene classOver3 = new Scene(new ClassOver_3());
+	    Scene classOver4 = new Scene(new ClassOver_4());
+	    Scene classOver5 = new Scene(new ClassOver_5());
+	    Scene classOver6 = new Scene(new ClassOver_6());
+	    Scene classOver7 = new Scene(new ClassOver_7());
+	    Scene classOver8 = new Scene(new ClassOver_8());
+	    Scene classOver9 = new Scene(new ClassOver_9());
+	    Scene classOver10 = new Scene(new ClassOver_10());
+	    Scene classOver11 = new Scene(new ClassOver_11());
+	    Scene classOver12 = new Scene(new ClassOver_12());
+	    Scene classOver13 = new Scene(new ClassOver_13());
+	    Scene classOver14 = new Scene(new ClassOver_14());
+	    Scene classOver15 = new Scene(new ClassOver_15());
+	    Scene classOver16 = new Scene(new ClassOver_16());
+	    Scene classOver17 = new Scene(new ClassOver_17());
+	    Scene classOver18 = new Scene(new ClassOver_18());
+	    Scene classOver19 = new Scene(new ClassOver_19());
+	        
 	    
 	    beginScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
   	    	@Override
@@ -227,8 +262,160 @@ public class Window extends Application{
   	    	}
   	    });
 	    
+	    classOver2.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver3);
+  	    		}
+  	    	}
+  	    });
 	    
+	    classOver3.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver4);
+  	    		}
+  	    	}
+  	    });
 	    
+	    classOver4.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver5);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver5.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver6);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver6.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver7);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver7.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver8);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver8.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver9);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver9.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver10);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver10.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver11);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver11.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver12);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver12.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver13);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver13.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver14);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver14.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver15);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver15.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver16);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver16.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver17);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver17.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver18);
+  	    		}
+  	    	}
+  	    });
+	    
+	    classOver18.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+  	    	@Override
+  	    	public void handle(MouseEvent mouseEvent){
+  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
+  	    		  theStage.setScene(classOver19);
+  	    		}
+  	    	}
+  	    });
+	    
+	        
             
 	    primaryStage.show();    
 	}
