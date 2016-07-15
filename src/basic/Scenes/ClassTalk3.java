@@ -13,7 +13,7 @@ public class ClassTalk3 extends Group {
     // class constructor
 	public ClassTalk3(){
 		String content = "Hope you would have a happy and meaningful high school life.";
-		dialogue = new DialogueBuilder(content);
+		dialogue = new DialogueBuilder("Mr. Peng", content);
 		create();
 		getChildren().add(dialogue);
 		dialogue.getAnimation().play();

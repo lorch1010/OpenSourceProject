@@ -24,13 +24,17 @@ public class DialogueBuilder extends Group{
     final double MARGIN = 25;
    
 	// fields 
+    private String nameContent;
     private String content;
+    private Rectangle nameRect = new Rectangle();
 	private Rectangle rect = new Rectangle();
+	private Text nameText = new Text(65, 440, "");
  	private Text text = new Text();
 	private Timeline timeline = new Timeline();
     
 	// constructor
-	public DialogueBuilder(String content){
+	public DialogueBuilder(String nameContent, String content){
+		this.nameContent = nameContent;
 		this.content = content;
 		createRectangle();
 		createDialogue();
@@ -45,19 +49,33 @@ public class DialogueBuilder extends Group{
  	}
 
 	public void createRectangle(){
+		nameRect.setX(50);
+		nameRect.setY(400);
+		nameRect.setWidth(200);
+		nameRect.setHeight(100);
+		nameRect.setArcHeight(30);
+		nameRect.setArcWidth(30);
+		nameRect.setFill(Color.BLACK);
+		
 		rect.setX(MARGIN * 2);
 		rect.setY(BASE_HEIGHT * 2 / 3 - MARGIN);
 		rect.setWidth(BASE_WIDTH - MARGIN * 4);
 		rect.setHeight(200);
-		rect.setArcWidth(40);
-		rect.setArcHeight(40);
+		rect.setArcWidth(30);
+		rect.setArcHeight(30);
 		rect.setFill(Color.BLACK);
+		
 
-		getChildren().add(rect);
+		getChildren().addAll(nameRect, rect);
  	}
 
 	public void createDialogue(){
 	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
+	    Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
+	    
+	    nameText.setText(nameContent);
+	    nameText.setFont(nameFont);
+	    nameText.setFill(Color.WHITE);
 			
 		//text.setText("Hello, world!");			 
 	    text.setX(rect.getX() + MARGIN);
@@ -66,7 +84,7 @@ public class DialogueBuilder extends Group{
 	    text.setTextOrigin(VPos.TOP);
 	    text.setFont(textFont);
 	    text.setFill(Color.WHITE);
-		getChildren().add(text);
+		getChildren().addAll(text, nameText);
 	}
 
 	public Text getText(){

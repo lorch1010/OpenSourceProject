@@ -14,7 +14,7 @@ public class ClassTalk extends Group {
 	public ClassTalk(){
 		String content = "Hello, everyone. I'm your head teacher. You can call me Mr. Peng. I'm sure that you guys had a great summer. "
 				+ "From now on, everybody's become a high school student, which means that you are becoming the grown-us while facing curel competitions at the same time.";
-		dialogue = new DialogueBuilder(content);
+		dialogue = new DialogueBuilder("Mr. Peng", content);
 		create();
 		getChildren().add(dialogue);
 		dialogue.getAnimation().play();

@@ -13,7 +13,7 @@ public class ClassOver_1 extends Group {
     // class constructor
 	public ClassOver_1(){
 		String content = "God, why do all head teachers like to give such a long speech?";
-		dialogue = new DialogueBuilder(content);
+		dialogue = new DialogueBuilder("Me", content);
 		create();
 		getChildren().add(dialogue);
 		dialogue.getAnimation().play();

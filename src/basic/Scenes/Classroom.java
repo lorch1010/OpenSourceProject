@@ -11,7 +11,7 @@ public class Classroom extends Group {
     // class constructor
 	public Classroom(){
 		String content = "(So many people here. The seat at the window seems nice. Guess I'll just sit there.)";
-		dialogue = new DialogueBuilder(content);
+		dialogue = new DialogueBuilder("Me", content);
 		create();
 		getChildren().add(dialogue);
 		dialogue.getAnimation().play();

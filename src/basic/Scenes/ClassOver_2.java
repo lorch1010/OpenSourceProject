@@ -13,7 +13,7 @@ public class ClassOver_2 extends Group {
     // class constructor
 	public ClassOver_2(){
 		String content = "Yo! You also here? How come I didn't see you?";
-		dialogue = new DialogueBuilder(content);
+		dialogue = new DialogueBuilder("?", content);
 		create();
 		getChildren().add(dialogue);
 		dialogue.getAnimation().play();
