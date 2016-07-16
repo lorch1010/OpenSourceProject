@@ -49,6 +49,7 @@ public class DialogueBuilder extends Group{
  	}
 
 	public void createRectangle(){
+		// create a rectangle for name field
 		nameRect.setX(50);
 		nameRect.setY(400);
 		nameRect.setWidth(200);
@@ -57,6 +58,7 @@ public class DialogueBuilder extends Group{
 		nameRect.setArcWidth(30);
 		nameRect.setFill(Color.BLACK);
 		
+		// create a rectangle for dialogue field
 		rect.setX(MARGIN * 2);
 		rect.setY(BASE_HEIGHT * 2 / 3 - MARGIN);
 		rect.setWidth(BASE_WIDTH - MARGIN * 4);
@@ -65,7 +67,6 @@ public class DialogueBuilder extends Group{
 		rect.setArcHeight(30);
 		rect.setFill(Color.BLACK);
 		
-
 		getChildren().addAll(nameRect, rect);
  	}
 
@@ -76,8 +77,7 @@ public class DialogueBuilder extends Group{
 	    nameText.setText(nameContent);
 	    nameText.setFont(nameFont);
 	    nameText.setFill(Color.WHITE);
-			
-		//text.setText("Hello, world!");			 
+				 
 	    text.setX(rect.getX() + MARGIN);
 	    text.setY(rect.getY() + MARGIN);
 	    text.setWrappingWidth(rect.getWidth() - MARGIN * 2);
@@ -92,8 +92,6 @@ public class DialogueBuilder extends Group{
 	}
 	
 	public void textAnimation(){	
-		/*String content = "Standing in front of this high school in which I'll be spending the next three years,"
-				+ " I still cannot believe that I was a middle school student two months ago. TIme flies.";*/
 	    IntegerProperty charCount = new SimpleIntegerProperty();
 	    KeyFrame startFrame = new KeyFrame(Duration.ZERO, new KeyValue(charCount, 0));
 	    KeyFrame endFrame = new KeyFrame(Duration.seconds(5), new KeyValue(charCount, content.length()));
@@ -113,8 +111,7 @@ public class DialogueBuilder extends Group{
 	        	String textToDisplay = content.substring(0,  newValue.intValue());
 	        	text.setText(textToDisplay);
 	        }
-	    });
-	         
+	    });        
 	}
 	
   	public Timeline getAnimation(){
