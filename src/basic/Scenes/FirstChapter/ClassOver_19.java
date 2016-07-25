@@ -12,7 +12,7 @@ public class ClassOver_19 extends Group {
     
     // class constructor
 	public ClassOver_19(){
-		String content = "(I kept talking to him until the class begin. It feels not bad when you know somebody in a new place.)";
+		String content = "(I kept talking to him until the class began. It feels not bad when you know somebody in a new place.)";
 		dialogue = new DialogueBuilder("Me", content);
 		create();
 		getChildren().add(dialogue);
