@@ -12,16 +12,23 @@ public class CGBuilder extends Group{
 	
 	public CGBuilder(String background, String character, Canvas canvas){
 		this.background = new Image(background, 1280, 720, false, false);
-		this.character = new Image(character);
+		if(character.length() > 0){
+			this.character = new Image(character);
+		}else{
+			this.character = null;
+		}
 		this.canvas = canvas;
 		addCanvas();
 	}
 	
 	public void createCG(){
+		
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 		
 		gc.drawImage(background, 0, 0);
-		gc.drawImage(character, 60, 0);
+		if(character != null){
+			gc.drawImage(character, 60, 0);
+		}
 		
 		//getChildren().add(canvas);
 	}

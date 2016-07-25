@@ -21,12 +21,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseButton;
 
 public class Window extends Application{
+	private Container container;
+	
 	// global variables
 	Button startButton;
 	Button exitButton;
-   	Stage theStage;
-	Scene beginScene;
-	
+	Stage theStage;
+	Scene theScene;
 
 	public static void main(String[] args){
         launch(args);
@@ -43,6 +44,27 @@ public class Window extends Application{
 	   
 	    // roots setup 
 	    Group root = new Group();
+	    
+	    // canvas initializations 
+	    Canvas canvas = new Canvas(1280, 720);
+	    GraphicsContext gc = canvas.getGraphicsContext2D();
+	    
+        // read image file
+	    Image bg = new Image("background2.jpg");	
+	  
+  	    // draw the background image
+	    gc.drawImage(bg, 0, 0);	    
+
+        // parameters for the main title
+	    gc.setFill(Color.RED);
+	    gc.setStroke(Color.BLACK);
+	    gc.setLineWidth(2);
+	    Font theFont = Font.font("DejaVu Sans Light", FontWeight.BOLD, 60);
+	    gc.setFont(theFont);
+	    gc.fillText("School Memories", 400, 200);
+	    gc.strokeText("School Memories", 400, 200);
+	    
+	    //root.getChildren().add(canvas);
 
 	    // create a vbox to store different buttons
 	    VBox vbox = new VBox(20);  // spacing = 20
@@ -134,31 +156,32 @@ public class Window extends Application{
 	    // add all the buttons to the vbox just created
 	    vbox.getChildren().addAll(startButton, loadButton, settingsButton, creditsButton, exitButton);
 	    
-	    // canvas initializations 
-	    Canvas canvas = new Canvas(1280, 720);
-	    root.getChildren().add(canvas);
-	    root.getChildren().add(vbox);
+	    root.getChildren().addAll(canvas, vbox);
 
-	    GraphicsContext gc = canvas.getGraphicsContext2D();
 	    
-        // read image file
-	    Image bg = new Image("background2.jpg");	    
-  	    // draw the background image
-	    gc.drawImage(bg, 0, 0);
-
-        // parameters for the main title
-	    gc.setFill(Color.RED);
-	    gc.setStroke(Color.BLACK);
-	    gc.setLineWidth(2);
-	    Font theFont = Font.font("DejaVu Sans Light", FontWeight.BOLD, 60);
-	    gc.setFont(theFont);
-	    gc.fillText("School Memories", 400, 200);
-	    gc.strokeText("School Memories", 400, 200);
-
         // scenes setup
-	    Scene theScene = new Scene(root);  
-	    primaryStage.setScene(theScene);
-	    beginScene = new Scene(new GameStart());
+	    Scene startScene = new Scene(root);  
+	    primaryStage.setScene(startScene);
+	  
+	    Canvas cgCanvas = new Canvas(1280, 720);
+	    GraphicsContext cgGC = cgCanvas.getGraphicsContext2D();
+	    Image initBackground = new Image("sakura.bmp", 1280, 720, false, false);
+	    cgGC.drawImage(initBackground, 0, 0);
+	    
+	    CGBuilder cg = new CGBuilder("schoolGate.jpg", "", cgCanvas);
+	    DialogueBuilder dialogue = new DialogueBuilder("Me", "Standing in front of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago."
+				+ " Time flies.");
+	    container = new Container(cg, dialogue);
+	    theScene = new Scene(container.getSurface());
+	    
+	    //container.startup();
+	    //primaryStage.setScene(theScene);
+	    
+	    
+	    // *****************************************************************************************************
+	    
+	    /*
+	    theScene = new Scene(new GameStart());
 	    Scene classScene = new Scene(new Classroom());
 	    Scene talkScene = new Scene(new ClassTalk());
 	    Scene talkScene2 = new Scene(new ClassTalk2());
@@ -184,7 +207,7 @@ public class Window extends Application{
 	    Scene classOver19 = new Scene(new ClassOver_19());
 	        
 	    
-	    beginScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+	    theScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
   	    	@Override
   	    	public void handle(MouseEvent mouseEvent){
   	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
@@ -391,6 +414,9 @@ public class Window extends Application{
   	    		}
   	    	}
   	    });
+  	    */
+	    
+	    //***************************************************************************************************
 	    
 	        
             
@@ -399,7 +425,9 @@ public class Window extends Application{
 	
 	public void ButtonClicked(ActionEvent e){
             if(e.getSource() == startButton){
-              theStage.setScene(beginScene);
+            	container.startup();
+            	theStage.setScene(theScene);
+            	
             }
             if(e.getSource() == exitButton){
             	Platform.exit();

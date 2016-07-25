@@ -24,8 +24,7 @@ public class Container extends AnimationTimer{
 	
 	public Parent getSurface(){
 		root = new Group();
-		root.getChildren().add(cg);
-		root.getChildren().add(dialogue);
+		root.getChildren().addAll(cg, dialogue);
 		
 		return root;
 	}

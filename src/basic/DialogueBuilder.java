@@ -36,12 +36,13 @@ public class DialogueBuilder extends Group{
 	public DialogueBuilder(String nameContent, String content){
 		this.nameContent = nameContent;
 		this.content = content;
-		createRectangle();
+		/*createRectangle();
 		createDialogue();
-		textAnimation();
-		this.rect = getRect();
+		textAnimation();*/
+		//this.rect = getRect();
 		this.timeline = getAnimation();
-		this.text = getText();
+		//this.text = getText();
+		addAllContents();
 	}
 	
 	public Rectangle getRect(){
@@ -67,10 +68,10 @@ public class DialogueBuilder extends Group{
 		rect.setArcHeight(30);
 		rect.setFill(Color.BLACK);
 		
-		getChildren().addAll(nameRect, rect);
+		//getChildren().addAll(nameRect, rect);
  	}
 
-	public void createDialogue(){
+	public void createText(){
 	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
 	    Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
 	    
@@ -84,7 +85,7 @@ public class DialogueBuilder extends Group{
 	    text.setTextOrigin(VPos.TOP);
 	    text.setFont(textFont);
 	    text.setFill(Color.WHITE);
-		getChildren().addAll(text, nameText);
+		//getChildren().addAll(text, nameText);
 	}
 
 	public Text getText(){
@@ -112,9 +113,21 @@ public class DialogueBuilder extends Group{
 	        	text.setText(textToDisplay);
 	        }
 	    });        
+	   	timeline.play();
 	}
 	
   	public Timeline getAnimation(){
 		return timeline;
 	}
+  	
+  	public void createDialogue(){
+  		createRectangle();
+  		createText();
+  		textAnimation();
+  	}
+  	
+  	public void addAllContents(){
+  		getChildren().addAll(rect, nameRect);
+  		getChildren().addAll(text, nameText);
+  	}
 }
