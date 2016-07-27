@@ -13,10 +13,10 @@ public class GameStart extends Group {
 		String content = "Standing in front of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago."
 				+ " Time flies.";
 
-		dialogue = new DialogueBuilder("Me", content);
+		//dialogue = new DialogueBuilder("Me", content);
 		create();
 		getChildren().add(dialogue);
-		dialogue.getAnimation().play();
+		//dialogue.getAnimation().play();
 	}
 	
 	public void create(){	

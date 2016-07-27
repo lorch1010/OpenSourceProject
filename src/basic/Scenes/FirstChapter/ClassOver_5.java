@@ -14,10 +14,10 @@ public class ClassOver_5 extends Group {
 	public ClassOver_5(){
 		String content = "God, I cannot believe that Mr. Peng'd talked so much about the college entrance test during the first day of school."
 				+ " I feel kind of stupid that I was expecting a beautiful high school life.";
-		dialogue = new DialogueBuilder("Ouyang", content);
+		//dialogue = new DialogueBuilder("Ouyang", content);
 		create();
 		getChildren().add(dialogue);
-		dialogue.getAnimation().play();
+		//dialogue.getAnimation().play();
 	}
 	
 	public void create(){	

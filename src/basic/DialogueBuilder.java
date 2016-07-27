@@ -16,6 +16,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import java.util.ArrayList;
 
 public class DialogueBuilder extends Group{
 	// declare global variables
@@ -24,30 +25,58 @@ public class DialogueBuilder extends Group{
 	final double MARGIN = 25;
    
 	// fields 
-   	private String nameContent;
-	private String content;
+	private int currentNameIndex = -1;
+	private int currentContentIndex = -1;
+	private ArrayList<String> names;
+	private ArrayList<String> contents;
+	private String nextName;
+	private String nextContent;
+	
+   	//private String nameContent;
+	//private String content;
+	
 	private Rectangle nameRect = new Rectangle();
 	private Rectangle rect = new Rectangle();
 	private Text nameText = new Text(65, 440, "");
 	private Text text = new Text();
-	private Timeline timeline = new Timeline();
+	//private Timeline timeline = new Timeline();
     
 	// constructor
-	public DialogueBuilder(String nameContent, String content){
+	public DialogueBuilder(ArrayList<String> names, ArrayList<String> contents){
+		this.names = names;
+		this.contents = contents;
+		addAllContents();
+	}
+	
+	
+	/*public DialogueBuilder(String nameContent, String content){
 		this.nameContent = nameContent;
 		this.content = content;
-		/*createRectangle();
-		createDialogue();
-		textAnimation();*/
 		//this.rect = getRect();
 		this.timeline = getAnimation();
 		//this.text = getText();
 		addAllContents();
-	}
+	}*/
 	
 	public Rectangle getRect(){
 		return rect;
  	}
+	
+	public String getNextName(){
+		currentNameIndex++;
+		if(currentNameIndex >= names.size()){
+			currentNameIndex = 0;
+		}
+		return (nextName = names.get(currentNameIndex));
+	}
+	
+	public String getNextContent(){
+		currentContentIndex++;
+		if(currentContentIndex >= contents.size()){
+			currentContentIndex = 0;
+		}
+		return (nextContent = contents.get(currentContentIndex));
+	}
 
 	public void createRectangle(){
 		// create a rectangle for name field
@@ -75,10 +104,11 @@ public class DialogueBuilder extends Group{
 	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
 	    Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
 	    
-	    nameText.setText(nameContent);
+	    nameText.setText(getNextName());
 	    nameText.setFont(nameFont);
 	    nameText.setFill(Color.WHITE);
 				 
+	    text.setText(getNextContent());
 	    text.setX(rect.getX() + MARGIN);
 	    text.setY(rect.getY() + MARGIN);
 	    text.setWrappingWidth(rect.getWidth() - MARGIN * 2);
@@ -92,7 +122,7 @@ public class DialogueBuilder extends Group{
  		return text;
 	}
 	
-	public void textAnimation(){	
+	/*public void textAnimation(){	
 	    IntegerProperty charCount = new SimpleIntegerProperty();
 	    KeyFrame startFrame = new KeyFrame(Duration.ZERO, new KeyValue(charCount, 0));
 	    KeyFrame endFrame = new KeyFrame(Duration.seconds(5), new KeyValue(charCount, content.length()));
@@ -118,12 +148,12 @@ public class DialogueBuilder extends Group{
 	
   	public Timeline getAnimation(){
 		return timeline;
-	}
+	}*/
   	
   	public void createDialogue(){
   		createRectangle();
   		createText();
-  		textAnimation();
+  		//textAnimation();
   	}
   	
   	public void addAllContents(){

@@ -14,10 +14,10 @@ public class ClassOver_11 extends Group {
 	public ClassOver_11(){
 		String content = "C'mon, man. The first thing you'll need to do when you got to a new place is to look for girls that are attractive to every single male."
 				+ " This is extremely important since we're spending three years in this class.";
-		dialogue = new DialogueBuilder("Ouyang", content);
+		//dialogue = new DialogueBuilder("Ouyang", content);
 		create();
 		getChildren().add(dialogue);
-		dialogue.getAnimation().play();
+		//dialogue.getAnimation().play();
 	}
 	
 	public void create(){	

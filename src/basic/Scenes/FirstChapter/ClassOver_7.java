@@ -13,10 +13,10 @@ public class ClassOver_7 extends Group {
     // class constructor
 	public ClassOver_7(){
 		String content = "Two extra girls I think, but I didn't even talk to them at middle school.";
-		dialogue = new DialogueBuilder("Ouyang", content);
+		//dialogue = new DialogueBuilder("Ouyang", content);
 		create();
 		getChildren().add(dialogue);
-		dialogue.getAnimation().play();
+		//dialogue.getAnimation().play();
 	}
 	
 	public void create(){	

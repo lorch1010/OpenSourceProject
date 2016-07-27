@@ -19,6 +19,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseButton;
+import java.util.ArrayList;
+
 
 public class Window extends Application{
 	private Container container;
@@ -163,14 +165,43 @@ public class Window extends Application{
 	    Scene startScene = new Scene(root);  
 	    primaryStage.setScene(startScene);
 	  
+	    // create a canvas for all other CGs
 	    Canvas cgCanvas = new Canvas(1280, 720);
 	    GraphicsContext cgGC = cgCanvas.getGraphicsContext2D();
-	    Image initBackground = new Image("sakura.bmp", 1280, 720, false, false);
+	    // initial background after the game starts
+	    Image initBackground = new Image("schoolGate.jpg", 1280, 720, false, false);
+	    
+	    // character images
+	    Image character1 = new Image("male.jpg");
+	    Image character2 = new Image("teacher.png");
+	    
+	    // background images
+	    Image background1 = new Image("classroom.bmp", 1280, 720, false, false);
+	    
+	    ArrayList<Image> backgrounds = new ArrayList<>();
+	    backgrounds.add(initBackground);
+	    backgrounds.add(background1);
+	    
+	    ArrayList<Image> characters = new ArrayList<>();
+	    characters.add(character1);
+	    characters.add(character2);
+	    
+	    // ArrayList of character names
+	    ArrayList<String> names = new ArrayList<>();
+	    names.add("Me");
+	    names.add("Mr. Peng");
+	    
+	    
+	    // ArrayList of dialogue contents
+	    ArrayList<String> contents = new ArrayList<>();
+	    contents.add("Standing in fron of this high school in which I'll be spending the next three yeasr feels weird. Time flies");
+	    contents.add("Hello, students. Hope you guys had a great summer.");
+	    
 	    cgGC.drawImage(initBackground, 0, 0);
 	    
-	    CGBuilder cg = new CGBuilder("schoolGate.jpg", "", cgCanvas);
-	    DialogueBuilder dialogue = new DialogueBuilder("Me", "Standing in front of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago."
-				+ " Time flies.");
+	    CGBuilder cg = new CGBuilder(cgCanvas, backgrounds, characters);
+	    DialogueBuilder dialogue = new DialogueBuilder(names, contents);
+	    
 	    container = new Container(cg, dialogue);
 	    theScene = new Scene(container.getSurface());
 	    
