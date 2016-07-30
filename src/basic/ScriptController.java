@@ -18,7 +18,8 @@ import javafx.scene.paint.Color;
 public class ScriptController {
 	// fields
 	private Map<String, String> vars;
-	private String message;
+	private String name = "";
+	private String message = "";
 	
 	public ScriptController(String scriptFile){
 		readScript(scriptFile);
@@ -42,18 +43,26 @@ public class ScriptController {
 		}
 	}
 	
-	public void displayMessage(String msgToDisplay){
-		StringTokenizer st = new StringTokenizer(msgToDisplay);
-		while(st.hasMoreTokens()){
-			System.out.println(st.nextToken());
-		}
-	}
 	
 	public void invokeScript(String file){
-		String obj = null, instruct = null;
+		//String obj = null, instruct = null;
 		//String data = null, ops = null;
-		String msgToDisplay;
-		StringTokenizer st = new StringTokenizer(file);
+		//String msgToDisplay;
+		String[] tokens = file.split("\\s");
+		for(int i=0;i<tokens.length;i++){
+			if("msg".equals(tokens[i])){
+				name = parseMsg(tokens[i+1]);
+				System.out.println("Name: " + name);
+			}else if(tokens[i].startsWith("#")){
+				continue;
+			}else{
+				message = message + " " + parseMsg(tokens[i]);
+			}
+			
+		}
+		System.out.println("Message: " + message);
+		
+		/*StringTokenizer st = new StringTokenizer(file);
 		while(st.hasMoreTokens()){
 			instruct = st.nextToken();
 			obj = st.nextToken();
@@ -66,7 +75,7 @@ public class ScriptController {
 				System.out.println("Message: " + msgToDisplay);
 			}
 			
-		}
+		}*/
 	}
 	
 	public String parseMsg(String statement){
