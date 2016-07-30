@@ -33,7 +33,8 @@ public class ScriptController {
 			
 			while((line = bufferedReader.readLine()) != null){
 				//System.out.println(line);
-				displayMessage(line);
+				//displayMessage(line);
+				invokeScript(line);
 			}
 			reader.close();
 		}catch(IOException e){
@@ -50,18 +51,19 @@ public class ScriptController {
 	
 	public void invokeScript(String file){
 		String obj = null, instruct = null;
-		String data = null, ops = null;
+		//String data = null, ops = null;
 		String msgToDisplay;
 		StringTokenizer st = new StringTokenizer(file);
 		while(st.hasMoreTokens()){
 			instruct = st.nextToken();
 			obj = st.nextToken();
-			data = st.nextToken();
-			ops = st.nextToken();
+			//data = st.nextToken();
+			//ops = st.nextToken();
 			
 			if("msg".equals(instruct)){
 				msgToDisplay = parseMsg(obj);
-				break;
+				// will print "charName" for unknown reasons
+				System.out.println("Message: " + msgToDisplay);
 			}
 			
 		}
@@ -83,7 +85,7 @@ public class ScriptController {
 				}else{
 					param.append(temp);
 				}
-			}else if(temp == '#' && i + 1 < statement.length() && statement.charAt(i + 1) == '{'){
+			}else if((temp == '#') && (i + 1 < statement.length()) && (statement.charAt(i + 1) == '{')){
 				start = true;
 				i++;
 			}else{
