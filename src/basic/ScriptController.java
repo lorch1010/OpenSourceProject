@@ -20,6 +20,8 @@ public class ScriptController {
 	private Map<String, String> vars;
 	private String name = "";
 	private String message = "";
+	private ArrayList<String> names = new ArrayList<>();
+	private ArrayList<String> messages = new ArrayList<>();
 	
 	public ScriptController(String scriptFile){
 		readScript(scriptFile);
@@ -52,15 +54,18 @@ public class ScriptController {
 		for(int i=0;i<tokens.length;i++){
 			if("msg".equals(tokens[i])){
 				name = parseMsg(tokens[i+1]);
-				System.out.println("Name: " + name);
+				names.add(name);
+				//System.out.println("Name: " + name);
 			}else if(tokens[i].startsWith("#")){
+				message = "";
 				continue;
 			}else{
 				message = message + " " + parseMsg(tokens[i]);
 			}
 			
 		}
-		System.out.println("Message: " + message);
+		messages.add(message);
+		//System.out.println("Message: " + message);
 		
 		/*StringTokenizer st = new StringTokenizer(file);
 		while(st.hasMoreTokens()){
@@ -76,6 +81,14 @@ public class ScriptController {
 			}
 			
 		}*/
+	}
+	
+	public ArrayList<String> getNames(){
+		return names;
+	}
+	
+	public ArrayList<String> getMessages(){
+		return messages;
 	}
 	
 	public String parseMsg(String statement){

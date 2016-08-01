@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class Window extends Application{
 	private Container container;
+	private ScriptController sc;
 	
 	// global variables
 	Button startButton;
@@ -160,6 +161,10 @@ public class Window extends Application{
 	    
 	    root.getChildren().addAll(canvas, vbox);
 
+	    /*-------------------------SCRIPT INITIALIZATION-----------------------------*/
+	    sc = new ScriptController("script.sc");
+	    /*---------------------------------------------------------------------------*/
+	    
 	    
         // scenes setup
 	    Scene startScene = new Scene(root);  
@@ -188,14 +193,16 @@ public class Window extends Application{
 	    
 	    // ArrayList of character names
 	    ArrayList<String> names = new ArrayList<>();
-	    names.add("Me");
-	    names.add("Mr. Peng");
+	    names = sc.getNames();
+	    /*names.add("Me");
+	    names.add("Mr. Peng");*/
 	    
 	    
 	    // ArrayList of dialogue contents
 	    ArrayList<String> contents = new ArrayList<>();
-	    contents.add("Standing in fron of this high school in which I'll be spending the next three yeasr feels weird. Time flies");
-	    contents.add("Hello, students. Hope you guys had a great summer.");
+	    contents = sc.getMessages();
+	    /*contents.add("Standing in fron of this high school in which I'll be spending the next three yeasr feels weird. Time flies");
+	    contents.add("Hello, students. Hope you guys had a great summer.");*/
 	    
 	    cgGC.drawImage(initBackground, 0, 0);
 	    
