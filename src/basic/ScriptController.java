@@ -17,7 +17,7 @@ import javafx.scene.paint.Color;
 
 public class ScriptController {
 	// fields
-	private Map<String, String> vars;
+	//private Map<String, String> vars;
 	private String name = "";
 	private String message = "";
 	private ArrayList<String> names = new ArrayList<>();
@@ -101,8 +101,9 @@ public class ScriptController {
 			
 			if(start){
 				if(temp == '}'){
-					msg.append(vars.get("#{" + param + "}"));
-					param.delete(0, param.length());
+					//msg.append(vars.get("#{" + param + "}"));
+					msg.append(param);
+					//param.delete(0, param.length());
 					start = false;
 				}else{
 					param.append(temp);

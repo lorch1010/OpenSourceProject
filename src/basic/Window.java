@@ -185,11 +185,64 @@ public class Window extends Application{
 	    
 	    ArrayList<Image> backgrounds = new ArrayList<>();
 	    backgrounds.add(initBackground);
+	    backgrounds.add(initBackground);
 	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    backgrounds.add(background1);
+	    
+	    
+	    
 	    
 	    ArrayList<Image> characters = new ArrayList<>();
 	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
 	    characters.add(character2);
+	    characters.add(character2);
+	    characters.add(character2);
+	    characters.add(character2);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    characters.add(character1);
+	    
+	    
 	    
 	    // ArrayList of character names
 	    ArrayList<String> names = new ArrayList<>();
