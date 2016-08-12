@@ -7,6 +7,8 @@ This is a project for the 8-week curriculum of **Open Source Software Developmen
 
 It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues.
 
+Due to the limit of time and unfamiliarity of JavaFX packages, the game currently is not complete. 
+
 ## Technical Support
 [Introduction to Java AVG Development](http://blog.csdn.net/cping1982/article/details/3868211)
 
@@ -57,6 +59,8 @@ Please check the [LICENSE](https://github.com/lorch1010/OpenSourceProject/blob/m
 
 ## Contact Me
 zixuchen@pdx.edu
+
+Let me know if you'd like to join me or give some suggestions on building the game.
 
 
                      
