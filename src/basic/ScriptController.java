@@ -85,11 +85,10 @@ public class ScriptController implements Controller{
 
 		// add dialogue last
 		if((message != null) && !(message.isEmpty())){	
-			dialogue.createDialogue();
 			dialogue.setName(nameToDisplay);
 			dialogue.setText(message);
+			dialogue.createDialogue();
 		}	
-		
 	}
 
 	public Group getDialogue(){

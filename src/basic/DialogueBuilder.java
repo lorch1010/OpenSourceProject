@@ -27,8 +27,9 @@ public class DialogueBuilder extends Group{
 		this.content = content;	
 		//this.rect = getRect();
 		//this.text = getText();
-		createDialogue();
+		setName(name);
 		setText(content);
+		createDialogue();
 		addAllContents();	
 	}
 	
@@ -62,7 +63,7 @@ public class DialogueBuilder extends Group{
  	}
 
 	public void createText(){
-	    	Font textFont = Font.font("Courier", FontWeight.THIN, 30);
+	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
 		Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
 
 		//nameText.setText(name);
@@ -70,12 +71,12 @@ public class DialogueBuilder extends Group{
 		nameText.setFill(Color.WHITE);
 	
 		//text.setText(content);	  		 
-	    	text.setX(rect.getX() + MARGIN);
-	    	text.setY(rect.getY() + MARGIN);
-	    	text.setWrappingWidth(rect.getWidth() - MARGIN * 2);
-	    	text.setTextOrigin(VPos.TOP);
-	    	text.setFont(textFont);
-	    	text.setFill(Color.WHITE);
+	    text.setX(rect.getX() + MARGIN);
+	    text.setY(rect.getY() + MARGIN);
+	    text.setWrappingWidth(rect.getWidth() - MARGIN * 2);
+	    text.setTextOrigin(VPos.TOP);
+	    text.setFont(textFont);
+	    text.setFill(Color.WHITE);
 	}
 
 	public void setName(String name){

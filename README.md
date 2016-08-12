@@ -12,6 +12,8 @@ It's designed to be a typical visual novel game that mainly focuses on telling g
 
 [JavaFx Game Development Tutorials](http://gamedevelopment.tutsplus.com/tutorials/introduction-to-javafx-for-game-development--cms-23835)
 
+Special thanks: [Zhou Haocheng](http://blog.zhouhaocheng.cn/) Thanks for helping me solve the issue of rendering images dynamically!
+
 ## Background Image Resources By
 [HURA_](http://bbs.66rpg.com/forum.php?mod=viewthread&tid=398844&extra=page%3D1%26orderby%3Dheats)
 
