@@ -119,7 +119,7 @@ public class ScriptController implements Controller{
 							cgs.remove(tokens[2]);
 						}
 					}else{
-						cgs.put(tokens[1], new Cg(vars.get(tokens[1]), 0, 0));
+						cgs.put(tokens[1], new Cg(vars.get(tokens[1]), 70, 0));
 					}			
 				}else if("msg".equals(tokens[0])){	
 						nameToDisplay = parseMsg(tokens[1]);	

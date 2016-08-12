@@ -24,7 +24,7 @@ public class ResourceManager{
 		
 		try{
 			image = new FileInputStream(fileName);
-			character = new Image(image);
+			character = new Image(image, 700, 600, true, false);
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
 		}

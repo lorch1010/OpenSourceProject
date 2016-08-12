@@ -1,8 +1,10 @@
 set schoolGate = schoolGate.jpg
-set classroom = classroom.bmp
-set teacher = teacher.png
-set friend1 = male.jpg
-
+set classroom = classroom.jpg
+set teacher = male.png
+set friend1 = friendSmile.png
+set friend2 = friend.png
+set girl = girl.png
+set girlSmile = girlSmile.png
 
 bg #{schoolGate}
 msg Me Standing in front of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago. Time flies. 
@@ -29,35 +31,78 @@ msg ? Yo, you also here? How come I didn't see you?
 
 msg Me Oh, I was fiddling with my cellphone, so...­
 
-msg Me (This is my middle school classmate named Ouyang Jini. He's a nice guy, but I didn't talk to him much, to be honest.)
+msg Me (This is my middle school classmate named Patrick. He's a nice guy, but I didn't talk to him much, to be honest.)
 
-msg Ouyang God, I cannot believe that Mr.Peng'd talked so much about the college entrance test during the first day of school. I feel kind of stupid that I was expecting a beautiful high school life. 
+msg Patrick God, I cannot believe that Mr.Peng'd talked so much about the college entrance test during the first day of school. I feel kind of stupid that I was expecting a beautiful high school life. 
 
 msg Me Haha, I feel the same way. Is it just us who were classmates before? 
 
-msg Ouyang Two extra girls I think, but I didn't even talk to them at middle school. 
+msg Patrick Two extra girls I think, but I didn't even talk to them at middle school. 
 
 msg Me Yea. Me, either. 
 
-msg Ouyang Have you noticed any pretty girls?
+msg Patrick Have you noticed any pretty girls?
 
 msg Me Eh, not really. I was playing a mobile game. 
 
-msg Ouyang C'mon, man. The first thing you'll need to do when you got to a new place is to look for girls that are attractive to every single male. This is extremely important since we're spending three years in this class. 
+msg Patrick C'mon, man. The first thing you'll need to do when you got to a new place is to look for girls that are attractive to every single male. This is extremely important since we're spending three years in this class. 
 
 msg Me ...
 
-msg Ouyang Why you staring at me like that?
+cg del #{friend1}
+cg #{friend2}
+msg Patrick Why you staring at me like that?
 
 msg Me Nothing. 
 
-msg Ouyang Were you thinking, "He's probably an idiot."? 
+msg Patrick Were you thinking, "He's probably an idiot."? 
 
 msg Me No, I was not. Seriously. 
 
-msg Ouyang Don't lie to me, man. 
+msg Patrick Don't lie to me, man. 
 
 msg Me Dude, how many time do I have to tell you that I was not thinking about that at all? 
 
 cg del
 msg Me (I kept talking to him until the class began. It feels not bad when you know somebody in a new place. )
+
+cg #{girl}
+msg ? Are you drawing something?
+
+msg Me Yea...
+
+msg ? You like cars?
+
+msg Me Sort of. I just like drawing them.
+
+msg ? Can I take a look at it?
+
+msg Me Sure...
+
+msg ? This is incredible! Have you learned drawing pictures before?
+
+msg Me I learned few years during the middle school, but then I gave up.
+
+msg ? Why's that?
+
+msg Me I guess I just didn't like the way of sitting there for two hours to draw the stupid plaster figure.
+
+cg del #{girl}
+cg #{girlSmile}
+msg ? Haha.
+
+cg del
+cg #{girl}
+msg Ivy I forgot to introduce myself. My name's Ivy. Nice to meet you.
+
+msg Me Hi.
+
+msg Ivy Shouldn't you tell me your name?
+
+msg Me My name's Jack. Nice to meet you. 
+
+cg del
+cg #{girlSmile}
+msg Ivy Glad talking to you. I'll talk to you later. Time for the class.
+
+msg Me Okay. 

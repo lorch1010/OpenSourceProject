@@ -15,11 +15,7 @@ public class Container extends AnimationTimer{
 	}
 
 	public void processEvent(){
-		//this.canvas.getScene().setOnKeyPressed(resolver);
-		//this.canvas.getScene().setOnKeyReleased(resolver);
 		this.canvas.setOnMouseClicked(resolver);
-		
-		//this.canvas.setOnMouseExited(resolver);	
 	}
 
 	public Parent getSurface(){
