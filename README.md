@@ -1,12 +1,21 @@
+School-Memories
+===============
+
+
 ## Introduction
 
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
 
 It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for each choice they've made in the dialogues.
 
-## Background Image Resources
+## Background Image Resources By
 
-## Character Image Resources
+Thank you so much for providing fantastic resources!
+
+
+## Character Image Resources By
+
+Thank you so much for providing fantastic resources!
 
 ## Game Description
 **Programming language:** *Java*
@@ -22,6 +31,4 @@ It's designed to be a typical visual novel game that mainly focuses on telling g
 
 
 ## References
-~                                                                                                    
-~                                                                                                    
-~                               
+                     
