@@ -1,4 +1,4 @@
-set schoolGate = schoolGate.jpg
+set school = schoolPlayground.jpg
 set classroom = classroom.jpg
 set teacher = male.png
 set friend1 = friendSmile.png
@@ -6,8 +6,8 @@ set friend2 = friend.png
 set girl = girl.png
 set girlSmile = girlSmile.png
 
-bg #{schoolGate}
-msg Me Standing in front of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago. Time flies. 
+bg #{school}
+msg Me First standing inside of this high school in which I'll be spending the next three years, I still cannot believe that I was a middle school student two months ago. Time flies. 
 
 msg Me Don't know what my high school life would be. 
 

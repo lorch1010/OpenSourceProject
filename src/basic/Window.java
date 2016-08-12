@@ -168,7 +168,7 @@ public class Window extends Application{
 	    Canvas cgCanvas = new Canvas(1280, 720);
 	    GraphicsContext cgGC = cgCanvas.getGraphicsContext2D();
 	    // initial background after the game starts
-	    Image initBackground = new Image("schoolGate.jpg", 1280, 720, false, false);
+	    Image initBackground = new Image("schoolPlayground.jpg", 1280, 720, false, true);
 	    
 	    cgGC.drawImage(initBackground, 0, 0);
 	    
