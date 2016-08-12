@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 public class Window extends Application{
 	private Container container;
 	
-	// global variables
+	// declare global variables
 	Button startButton;
 	Button exitButton;
 	Stage theStage;
@@ -49,19 +49,19 @@ public class Window extends Application{
 	    GraphicsContext gc = canvas.getGraphicsContext2D();
 	    
         // read image file
-	    Image bg = new Image("background2.jpg");	
+	    Image bg = new Image("schoolBuilding.jpg", 1280, 720, false, false);	
 	  
   	    // draw the background image
 	    gc.drawImage(bg, 0, 0);	    
 
         // parameters for the main title
-	    gc.setFill(Color.RED);
+	    gc.setFill(Color.ORANGE);
 	    gc.setStroke(Color.BLACK);
 	    gc.setLineWidth(2);
-	    Font theFont = Font.font("DejaVu Sans Light", FontWeight.BOLD, 60);
+	    Font theFont = Font.font("Ubuntu", FontWeight.BOLD, 60);
 	    gc.setFont(theFont);
-	    gc.fillText("School Memories", 400, 200);
-	    gc.strokeText("School Memories", 400, 200);
+	    gc.fillText("School Memories", 425, 200);
+	    gc.strokeText("School Memories", 425, 200);
 
 	    // create a vbox to store different buttons
 	    VBox vbox = new VBox(20);  // spacing = 20
@@ -155,7 +155,7 @@ public class Window extends Application{
 	    
 	    root.getChildren().addAll(canvas, vbox);
 
-	    /*-------------------------SCRIPT INITIALIZATION-----------------------------*/
+	    /*-------------------------READ THE SCRIPT-----------------------------*/
 	    ScriptController sc = new ScriptController("script.sc");
 	    /*---------------------------------------------------------------------------*/
 	    
@@ -182,8 +182,7 @@ public class Window extends Application{
 	public void ButtonClicked(ActionEvent e){
             if(e.getSource() == startButton){
             	container.startup();
-            	theStage.setScene(theScene);
-            	
+            	theStage.setScene(theScene);         	
             }
             if(e.getSource() == exitButton){
             	Platform.exit();

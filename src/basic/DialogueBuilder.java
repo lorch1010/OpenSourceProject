@@ -9,14 +9,13 @@ import javafx.geometry.VPos;
 
 public class DialogueBuilder extends Group{
 	// declare global variables
-    	final double BASE_WIDTH = 1280;
-    	final double BASE_HEIGHT = 720;
-    	final double MARGIN = 25;
+    final double BASE_WIDTH = 1280;
+    final double BASE_HEIGHT = 720;
+    final double MARGIN = 25;
    
-	// fields	
+	// class fields	
 	private String content;
 	private String name;
-
 	private Rectangle rect = new Rectangle();
 	private Rectangle nameRect = new Rectangle();
  	private Text text = new Text();

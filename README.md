@@ -3,10 +3,9 @@ School-Memories
 Copyright &copy; 2016 Jack Chen
 
 ## Introduction
-
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
 
-It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for each choice they've made in the dialogues.
+It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues.
 
 ## Background Image Resources By
 [HURA_](http://bbs.66rpg.com/forum.php?mod=viewthread&tid=398844&extra=page%3D1%26orderby%3Dheats)
@@ -25,7 +24,24 @@ Thank you so much for providing these fantastic resources!
 
 **Applicable platforms:** *Linux & Windows*
 
-**Basic controls:** *Mouse & keyboard*
+**Basic controls:** *Mouse*
+
+## Build Instructions
+
+### Building with Eclipse
+1. Clone or download the project.
+
+2. Open Eclipse and select File -> Open Projects from File System.
+
+3. Select the correct project folder and click Finish.
+
+4. Right click on the project, go to Run As and select Run Configurations.
+
+5. Click on Arguments tab and choose Other as Working Directory.
+
+6. Hit Workspace and select bin folder since image and script sources are being used with their relative paths. 
+
+7. Hit Apply and Run. 
 
 ## License
 Please check the [LICENSE](https://github.com/lorch1010/OpenSourceProject/blob/master/LICENSE) file.

@@ -20,6 +20,8 @@ public class Container extends AnimationTimer{
 
 	public Parent getSurface(){
 		root = new Group();
+		
+		// add canvas and dialogue to the root
 		root.getChildren().add(canvas);
 		root.getChildren().add(resolver.getDialogue());
 		
