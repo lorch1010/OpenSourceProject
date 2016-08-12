@@ -2,46 +2,46 @@ package basic;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Parent;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.canvas.Canvas;
 
 public class Container extends AnimationTimer{
+	private Canvas canvas;
 	private Group root;
-	private CGBuilder cg;
-	private DialogueBuilder dialogue;
-	
-	public Container(CGBuilder cg, DialogueBuilder dialogue){
-		this.cg = cg;
-		this.dialogue = dialogue;
+	private ViewResolver resolver;
+
+	public Container(Controller controller, Canvas canvas){
+		this.canvas = canvas;
+		this.resolver = new ViewResolver(controller);
 	}
+
 	public void processEvent(){
-		this.cg.getCanvas().setOnMouseClicked(new EventHandler<MouseEvent>(){
-			public void handle(MouseEvent mouseEvent){
-				start();
-			}
-		});
+		//this.canvas.getScene().setOnKeyPressed(resolver);
+		//this.canvas.getScene().setOnKeyReleased(resolver);
+		this.canvas.setOnMouseClicked(resolver);
+		
+		//this.canvas.setOnMouseExited(resolver);	
 	}
-	
+
 	public Parent getSurface(){
 		root = new Group();
-		root.getChildren().addAll(cg, dialogue);
+		root.getChildren().add(canvas);
+		root.getChildren().add(resolver.getDialogue());
 		
 		return root;
 	}
-	
+
 	public void startup(){
 		processEvent();
-		//start();
+		start();
 	}
-	
-	@Override
-	public void handle(long now){
-		cg.createCG();
-		dialogue.createDialogue();
-		shutdown();
-	}
-	
+
 	public void shutdown(){
 		stop();
+	}
+
+	@Override
+	public void handle(long now){
+		resolver.renderView(canvas.getGraphicsContext2D());
+		//shutdown();	
 	}
 }

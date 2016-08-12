@@ -1,5 +1,4 @@
 package basic;
-import basic.Scenes.FirstChapter.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -18,13 +17,10 @@ import javafx.scene.effect.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.MouseButton;
-import java.util.ArrayList;
 
 
 public class Window extends Application{
 	private Container container;
-	private ScriptController sc;
 	
 	// global variables
 	Button startButton;
@@ -66,8 +62,6 @@ public class Window extends Application{
 	    gc.setFont(theFont);
 	    gc.fillText("School Memories", 400, 200);
 	    gc.strokeText("School Memories", 400, 200);
-	    
-	    //root.getChildren().add(canvas);
 
 	    // create a vbox to store different buttons
 	    VBox vbox = new VBox(20);  // spacing = 20
@@ -162,7 +156,7 @@ public class Window extends Application{
 	    root.getChildren().addAll(canvas, vbox);
 
 	    /*-------------------------SCRIPT INITIALIZATION-----------------------------*/
-	    sc = new ScriptController("script.sc");
+	    ScriptController sc = new ScriptController("script.sc");
 	    /*---------------------------------------------------------------------------*/
 	    
 	    
@@ -176,341 +170,12 @@ public class Window extends Application{
 	    // initial background after the game starts
 	    Image initBackground = new Image("schoolGate.jpg", 1280, 720, false, false);
 	    
-	    // character images
-	    Image character1 = new Image("male.jpg");
-	    Image character2 = new Image("teacher.png");
-	    
-	    // background images
-	    Image background1 = new Image("classroom.bmp", 1280, 720, false, false);
-	    
-	    ArrayList<Image> backgrounds = new ArrayList<>();
-	    backgrounds.add(initBackground);
-	    backgrounds.add(initBackground);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    backgrounds.add(background1);
-	    
-	    
-	    
-	    
-	    ArrayList<Image> characters = new ArrayList<>();
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character2);
-	    characters.add(character2);
-	    characters.add(character2);
-	    characters.add(character2);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    characters.add(character1);
-	    
-	    
-	    
-	    // ArrayList of character names
-	    ArrayList<String> names = new ArrayList<>();
-	    names = sc.getNames();
-	    /*names.add("Me");
-	    names.add("Mr. Peng");*/
-	    
-	    
-	    // ArrayList of dialogue contents
-	    ArrayList<String> contents = new ArrayList<>();
-	    contents = sc.getMessages();
-	    /*contents.add("Standing in fron of this high school in which I'll be spending the next three yeasr feels weird. Time flies");
-	    contents.add("Hello, students. Hope you guys had a great summer.");*/
-	    
 	    cgGC.drawImage(initBackground, 0, 0);
 	    
-	    CGBuilder cg = new CGBuilder(cgCanvas, backgrounds, characters);
-	    DialogueBuilder dialogue = new DialogueBuilder(names, contents);
 	    
-	    container = new Container(cg, dialogue);
+	    container = new Container(sc, cgCanvas);
 	    theScene = new Scene(container.getSurface());
-	    
-	    //container.startup();
-	    //primaryStage.setScene(theScene);
-	    
-	    
-	    // *****************************************************************************************************
-	    
-	    /*
-	    theScene = new Scene(new GameStart());
-	    Scene classScene = new Scene(new Classroom());
-	    Scene talkScene = new Scene(new ClassTalk());
-	    Scene talkScene2 = new Scene(new ClassTalk2());
-	    Scene talkScene3 = new Scene(new ClassTalk3());
-	    Scene classOver1 = new Scene(new ClassOver_1());
-	    Scene classOver2 = new Scene(new ClassOver_2());
-	    Scene classOver3 = new Scene(new ClassOver_3());
-	    Scene classOver4 = new Scene(new ClassOver_4());
-	    Scene classOver5 = new Scene(new ClassOver_5());
-	    Scene classOver6 = new Scene(new ClassOver_6());
-	    Scene classOver7 = new Scene(new ClassOver_7());
-	    Scene classOver8 = new Scene(new ClassOver_8());
-	    Scene classOver9 = new Scene(new ClassOver_9());
-	    Scene classOver10 = new Scene(new ClassOver_10());
-	    Scene classOver11 = new Scene(new ClassOver_11());
-	    Scene classOver12 = new Scene(new ClassOver_12());
-	    Scene classOver13 = new Scene(new ClassOver_13());
-	    Scene classOver14 = new Scene(new ClassOver_14());
-	    Scene classOver15 = new Scene(new ClassOver_15());
-	    Scene classOver16 = new Scene(new ClassOver_16());
-	    Scene classOver17 = new Scene(new ClassOver_17());
-	    Scene classOver18 = new Scene(new ClassOver_18());
-	    Scene classOver19 = new Scene(new ClassOver_19());
-	        
-	    
-	    theScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  //classScene = new Scene(new Classroom());
-  	    		  theStage.setScene(classScene);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(talkScene);
-  	    		}
-  	    	}
-  	    });
-	    
-	    talkScene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(talkScene2);
-  	    		}
-  	    	}
-  	    });
-	    
-	    talkScene2.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(talkScene3);
-  	    		}
-  	    	}
-  	    });
-	    
-	    talkScene3.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver1);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver1.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver2);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver2.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver3);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver3.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver4);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver4.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver5);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver5.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver6);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver6.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver7);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver7.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver8);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver8.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver9);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver9.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver10);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver10.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver11);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver11.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver12);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver12.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver13);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver13.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver14);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver14.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver15);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver15.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver16);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver16.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver17);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver17.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver18);
-  	    		}
-  	    	}
-  	    });
-	    
-	    classOver18.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-  	    	@Override
-  	    	public void handle(MouseEvent mouseEvent){
-  	    		if(mouseEvent.getButton() == MouseButton.SECONDARY){
-  	    		  theStage.setScene(classOver19);
-  	    		}
-  	    	}
-  	    });
-  	    */
-	    
-	    //***************************************************************************************************
-	    
-	        
-            
+		            
 	    primaryStage.show();    
 	}
 	
@@ -523,5 +188,9 @@ public class Window extends Application{
             if(e.getSource() == exitButton){
             	Platform.exit();
             }          
+	}
+	
+	public void stop(){
+		container.shutdown();
 	}
 }
