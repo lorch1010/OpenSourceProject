@@ -1,8 +1,9 @@
 set school = schoolPlayground.jpg
 set classroom = classroom.jpg
 set teacher = male.png
-set friend1 = friendSmile.png
-set friend2 = friend.png
+set friendSmile = friendSmile.png
+set friend = friend.png
+set friend2 = friend2.png
 set girl = girl.png
 set girlSmile = girlSmile.png
 
@@ -26,7 +27,7 @@ msg Mr.Peng Hope you would have a happy and meaningful high school life.
 cg del
 msg Me God, why do all head teachers like to give such a long speech? 
 
-cg #{friend1}
+cg #{friendSmile}
 msg ? Yo, you also here? How come I didn't see you? 
 
 msg Me Oh, I was fiddling with my cellphone, so...­
@@ -49,8 +50,8 @@ msg Patrick C'mon, man. The first thing you'll need to do when you got to a new 
 
 msg Me ...
 
-cg del #{friend1}
-cg #{friend2}
+cg del #{friendSmile}
+cg #{friend}
 msg Patrick Why you staring at me like that?
 
 msg Me Nothing. 
@@ -106,3 +107,37 @@ cg #{girlSmile}
 msg Ivy Glad talking to you. I'll talk to you later. Time for the class.
 
 msg Me Okay. 
+
+cg del
+cg #{friend2}
+msg Patrick Wanna have some fun this weekend?
+
+msg Me Where? I don't care.
+
+msg Patrick To the amusement park?
+
+msg Me Sure. Haven't been there for a long time.
+
+cg del #{friend2}
+cg #{girl}
+msg Ivy I don't really want to go, to be honest. I prefer to stay at home and study for the upcoming test next week.
+
+msg Me Don't say that. Come with us. Me + him = boring.
+
+cg del #{girl}
+cg #{friend}
+msg Patrick Wow, I can't pretend that I didn't hear that.
+
+cg del #{friend}
+cg #{girl}
+msg Ivy Alright. When should we go then?
+
+cg del #{girl}
+cg #{friend2}
+msg Patrick Saturday at 10?
+
+msg Me Cool.
+
+cg del #{friend2}
+cg #{girlSmile}
+msg Ivy Okay.

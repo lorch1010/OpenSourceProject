@@ -5,8 +5,7 @@ Copyright &copy; 2016 Jack Chen
 ## Introduction
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
 
-It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues. The storylines of this game are b
-based on my personal experiences during high school. Character names in the game may be revised properly for privacy reasons. 
+It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues. The storylines of this game are based on my personal experiences during high school. Character names in the game may be revised properly for privacy reasons. 
 
 Due to the limit of time and unfamiliarity of JavaFX packages, the game currently is not complete yet. 
 
