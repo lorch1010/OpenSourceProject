@@ -1,4 +1,6 @@
 package basic;
+import java.util.Optional;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -11,6 +13,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.image.Image;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.scene.effect.*;
@@ -66,15 +69,16 @@ public class Window extends Application{
 	    // create a vbox to store different buttons
 	    VBox vbox = new VBox(20);  // spacing = 20
 	    vbox.setLayoutX(600);
-	    vbox.setLayoutY(400);
+	    vbox.setLayoutY(385);
 	    vbox.setAlignment(Pos.BOTTOM_CENTER);
+	    
 
 	    // choose the bloom effect for the buttons
 	    Bloom bloom = new Bloom();
 	    
 	    // create the button "Start Game"
 	    startButton = new Button("Start Game");
-	    startButton.setStyle("-fx-font: 18 arial");
+	    startButton.setId("lion-default");
 	    
 	    startButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    	@Override public void handle(MouseEvent e){
@@ -91,7 +95,7 @@ public class Window extends Application{
 
         // create the button "Load Game"
 	    Button loadButton = new Button("Load Game");
-        loadButton.setStyle("-fx-font: 18 arial");
+	    loadButton.setId("lion-default");
 	    
 	    loadButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    	@Override public void handle(MouseEvent e){
@@ -106,7 +110,7 @@ public class Window extends Application{
 	    
 	    // create the button "Settings"
 	    Button settingsButton = new Button("Settings");
-        settingsButton.setStyle("-fx-font: 18 arial");
+	    settingsButton.setId("lion-default");
 	    
 	    settingsButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    	@Override public void handle(MouseEvent e){
@@ -121,7 +125,7 @@ public class Window extends Application{
 	    
 	    // create the button "Credits"
 	    Button creditsButton = new Button("Credits");
-        creditsButton.setStyle("-fx-font: 18 arial");
+	    creditsButton.setId("lion-default");
 	    
 	    creditsButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    	@Override public void handle(MouseEvent e){
@@ -136,7 +140,7 @@ public class Window extends Application{
 	    
 	    // create the button "Exit Game"	    
 	    exitButton = new Button("Exit Game");
-        exitButton.setStyle("-fx-font: 18 arial");
+	    exitButton.setId("lion-default");
 	    
 	    exitButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    	@Override public void handle(MouseEvent e){
@@ -162,6 +166,7 @@ public class Window extends Application{
 	    
         // scenes setup
 	    Scene startScene = new Scene(root);  
+	    startScene.getStylesheets().add("buttonStyle.css");
 	    primaryStage.setScene(startScene);
 	  
 	    // create a canvas for all other CGs
@@ -180,12 +185,20 @@ public class Window extends Application{
 	}
 	
 	public void ButtonClicked(ActionEvent e){
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Message");
+		alert.setHeaderText(null);
+		alert.setContentText("Do you want to quit the game?");		
+		
             if(e.getSource() == startButton){
             	container.startup();
             	theStage.setScene(theScene);         	
             }
             if(e.getSource() == exitButton){
-            	Platform.exit();
+            	Optional<ButtonType> result = alert.showAndWait();
+            	if(result.get() == ButtonType.OK){
+            		Platform.exit();
+            	}
             }          
 	}
 	
