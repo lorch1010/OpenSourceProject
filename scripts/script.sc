@@ -73,19 +73,19 @@ msg Me Yea...
 
 msg ? You like cars?
 
-msg Me Sort of. I just like drawing them.
+msg Me Sort of. I just draw them whenever I'm free.
 
 msg ? Can I take a look at it?
 
 msg Me Sure...
 
-msg ? This is incredible! Have you learned drawing pictures before?
+msg ? This looks gorgeous! Have you learned drawing pictures before?
 
-msg Me I learned few years during the middle school, but then I gave up.
+msg Me I did for a few years during the middle school, but then I quit.
 
 msg ? Why's that?
 
-msg Me I guess I just didn't like the way of sitting there for two hours to draw the stupid plaster figure.
+msg Me No particular reasons. I preferred to treat it as a hobby, I guess. And I really didn't like the way of sitting on a chair to draw the stupid plaster of figures for several hours.
 
 cg del #{girl}
 cg #{girlSmile}
@@ -97,7 +97,7 @@ msg Ivy I forgot to introduce myself. My name's Ivy. Nice to meet you.
 
 msg Me Hi.
 
-msg Ivy Shouldn't you tell me your name?
+msg Ivy Why don't you introduce yourself?
 
 msg Me My name's Jack. Nice to meet you. 
 

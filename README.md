@@ -5,9 +5,10 @@ Copyright &copy; 2016 Jack Chen
 ## Introduction
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
 
-It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues.
+It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues. The storylines of this game are b
+based on my personal experiences during high school. Character names in the game may be revised properly for privacy reasons. 
 
-Due to the limit of time and unfamiliarity of JavaFX packages, the game currently is not complete. 
+Due to the limit of time and unfamiliarity of JavaFX packages, the game currently is not complete yet. 
 
 ## Technical Support
 [Introduction to Java AVG Development](http://blog.csdn.net/cping1982/article/details/3868211)
@@ -53,6 +54,15 @@ Thank you so much for providing these fantastic resources!
 6. Hit **Workspace** and select **bin** folder since image and script sources are being used with their relative paths. 
 
 7. Hit **Apply** and **Run**. 
+
+## Future Improvements
+1. Add support for background music.
+
+2. Add support for dialogue animation.
+
+3. Add basic functionalities or settings.
+
+4. Modify the script for better performance.
 
 ## License
 Please check the [LICENSE](https://github.com/lorch1010/OpenSourceProject/blob/master/LICENSE) file.
