@@ -20,7 +20,7 @@
     -fx-background-insets: 0 0 -1 0,0,1;
     -fx-background-radius: 5, 5, 4;
     -fx-padding: 10 20 10 20;
-    -fx-text-fill: #f7f7f7;
+    -fx-text-fill: #008080;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
