@@ -54,7 +54,7 @@ Thank you so much for providing these fantastic resources!
 
 7. Hit **Apply** and **Run**. 
 
-## Future Improvements
+## Future Potential Improvements
 1. Add support for background music.
 
 2. Add support for dialogue animation.
