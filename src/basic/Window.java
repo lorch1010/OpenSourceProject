@@ -58,8 +58,8 @@ public class Window extends Application{
 	    gc.drawImage(bg, 0, 0);	    
 
         // parameters for the main title
-	    gc.setFill(Color.ORANGE);
-	    gc.setStroke(Color.BLACK);
+	    gc.setFill(Color.RED);
+	    gc.setStroke(Color.ORANGERED);
 	    gc.setLineWidth(2);
 	    Font theFont = Font.font("Ubuntu", FontWeight.BOLD, 60);
 	    gc.setFont(theFont);
@@ -176,8 +176,7 @@ public class Window extends Application{
 	    Image initBackground = new Image("schoolPlayground.jpg", 1280, 720, false, true);
 	    
 	    cgGC.drawImage(initBackground, 0, 0);
-	    
-	    
+	   	    
 	    container = new Container(sc, cgCanvas);
 	    theScene = new Scene(container.getSurface());
 		            
@@ -188,18 +187,18 @@ public class Window extends Application{
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Message");
 		alert.setHeaderText(null);
-		alert.setContentText("Do you want to quit the game?");		
+		alert.setContentText("Do you want to quit the game?");	
 		
-            if(e.getSource() == startButton){
-            	container.startup();
-            	theStage.setScene(theScene);         	
+		if(e.getSource() == startButton){
+            container.startup();
+            theStage.setScene(theScene);         	
+        }
+        if(e.getSource() == exitButton){
+        	Optional<ButtonType> result = alert.showAndWait();
+            if(result.get() == ButtonType.OK){
+            	Platform.exit();
             }
-            if(e.getSource() == exitButton){
-            	Optional<ButtonType> result = alert.showAndWait();
-            	if(result.get() == ButtonType.OK){
-            		Platform.exit();
-            	}
-            }          
+        }          
 	}
 	
 	public void stop(){
