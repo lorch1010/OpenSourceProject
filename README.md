@@ -1,8 +1,6 @@
-School-Memories
+School-Memories  [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 ===============
 Copyright &copy; 2016 Jack Chen
-
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ## Introduction
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
