@@ -11,6 +11,7 @@ import javafx.scene.Group;
 import javafx.event.Event;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 
 public class ScriptController implements Controller{	
 	private LineReader scripts;
@@ -20,13 +21,15 @@ public class ScriptController implements Controller{
 	private String nameToDisplay;
 	private String message;	
 	private DialogueBuilder dialogue;
+	private Choice choice;
 
 	public ScriptController(String scriptFile){
 		this.vars = new HashMap<String, String>();
 		this.cgs = new LinkedHashMap<String, Cg>();
 		this.bgs = new LinkedHashMap<String, Background>();
 		this.dialogue = new DialogueBuilder();
-			
+		this.choice = new Choice();
+		
 		readScript(scriptFile);
 	}
 
@@ -66,6 +69,7 @@ public class ScriptController implements Controller{
 	@Override
 	public void handle(Event event){
 		if(event.getEventType() == MouseEvent.MOUSE_CLICKED){
+			choice.clear();
 			invokeScript();
 		}	
 	}
@@ -93,6 +97,14 @@ public class ScriptController implements Controller{
 
 	public Group getDialogue(){
 		return dialogue;
+	}
+	
+	public Group getChoice(){
+		return choice;
+	}
+	
+	public Button getButton(){
+		return choice.getButton();
 	}
 
 	public void invokeScript(){
@@ -136,7 +148,10 @@ public class ScriptController implements Controller{
 				}else{
 					bgs.put(tokens[1], new Background(vars.get(tokens[1]), 0, 0));	
 				}
-			}	
+			}else if("select".equals(tokens[0])){
+				choice.createChoice();
+				break;
+			}
 		}	
 		
 	}

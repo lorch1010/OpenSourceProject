@@ -16,6 +16,9 @@ public class Container extends AnimationTimer{
 
 	public void processEvent(){
 		this.canvas.setOnMouseClicked(resolver);
+		if(this.resolver.getButton() != null){
+			this.resolver.getButton().setOnMouseClicked(resolver);
+		}
 	}
 
 	public Parent getSurface(){
@@ -24,6 +27,9 @@ public class Container extends AnimationTimer{
 		// add canvas and dialogue to the root
 		root.getChildren().add(canvas);
 		root.getChildren().add(resolver.getDialogue());
+		if(resolver.getChoice() != null){
+			root.getChildren().add(resolver.getChoice());
+		}
 		
 		return root;
 	}
