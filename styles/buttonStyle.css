@@ -58,4 +58,21 @@
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.2), 1, 0.0, 0, 1);
 }
 
+#btn{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-family: "Courier";
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+#btn-pressed{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-family: "Courier";
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+
 
