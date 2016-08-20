@@ -179,6 +179,7 @@ public class Window extends Application{
 	   	    
 	    container = new Container(sc, cgCanvas);
 	    theScene = new Scene(container.getSurface());
+	    theScene.getStylesheets().add("buttonStyle.css");
 		            
 	    primaryStage.show();    
 	}

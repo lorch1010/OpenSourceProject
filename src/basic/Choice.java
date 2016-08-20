@@ -15,8 +15,8 @@ public class Choice extends Group{
 	private String content_2;
 
 	private VBox vbox = new VBox(20);
-	private Button button_1 = new Button("TEST FOR BUTTON1");
-	private Button button_2 = new Button("TEST FOR BUTTON2");
+	private Button button1 = new Button("Invite her");
+	private Button button2 = new Button("Give up");
 
 	public Choice(String content_1, String content_2){
 		this.content_1 = content_1;
@@ -36,21 +36,21 @@ public class Choice extends Group{
 		vbox.setMinWidth(300);
 		vbox.setMaxWidth(450);
 
-		//button_1 = new Button("Button1");
-		button_1.setId("btn");
-		buttonDesign(button_1);
+		//button1 = new Button("TEST Button1");
+		button1.setId("btn");
+		buttonDesign(button1);
 
-		//button_2 = new Button("Button2");
-		button_2.setId("btn");
-		buttonDesign(button_2);
+		//button2 = new Button(" TEST Button2");
+		button2.setId("btn");
+		buttonDesign(button2);
 
-		vbox.getChildren().addAll(button_1, button_2);
+		vbox.getChildren().addAll(button1, button2);
 
 		getChildren().add(vbox);	
 	}
 	
 	public Button getButton(){
-		return button_1;
+		return button1;
 	}
 	
 	public void clear(){
