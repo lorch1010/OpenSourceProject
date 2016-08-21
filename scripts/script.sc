@@ -122,7 +122,9 @@ cg del #{friend2}
 cg #{girl}
 msg Ivy I don't really want to go, to be honest. I prefer to stay at home and study for the upcoming test next week.
 
-select 
+select
+a. Invite her
+b. Give up
 
 msg Me Don't say that. Come with us. Me + him = boring.
 

@@ -3,6 +3,7 @@ import java.lang.StringBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,6 +25,8 @@ public class ScriptController implements Controller{
 	private Map<String, Background> bgs;
 	private String nameToDisplay;
 	private String message;	
+	private String option1;
+	private String option2;
 	private DialogueBuilder dialogue;
 	private Choice choice;
 
@@ -97,6 +100,9 @@ public class ScriptController implements Controller{
 			dialogue.setText(message);
 			dialogue.createDialogue();
 		}	
+		
+		/*choice.setText(option1);
+		choice.createChoice();*/
 	}
 
 	public Group getDialogue(){
@@ -107,20 +113,25 @@ public class ScriptController implements Controller{
 		return choice;
 	}
 	
-	public Button getButton(){
-		return choice.getButton();
+	public ArrayList<Button> getButtons(){
+		return choice.getButtons();
 	}
 
 	public void invokeScript(){
 		this.message = "";
 		this.nameToDisplay = "";
+		this.option1 = "";
+		this.option2 = "";
 		
 		while(scripts.hasNext()){
 			String script = scripts.getNext();
 
 			String[] tokens = script.split("\\s");
 			
-			int tokenLength = tokens.length;	
+			int tokenLength = tokens.length;
+			/*for(int i=0;i<tokenLength;i++){
+				System.out.println(tokens[i]);
+			}*/
 	
 				
 			if("set".equals(tokens[0])){
@@ -153,11 +164,22 @@ public class ScriptController implements Controller{
 					bgs.put(tokens[1], new Background(vars.get(tokens[1]), 0, 0));	
 				}
 			}else if("select".equals(tokens[0])){
+				// do nothing and proceed to the next line
+				
+			}else if("a.".equals(tokens[0])){
+				for(int i=1;i<tokenLength;i++){
+					option1 = option1 + " " + parseMsg(tokens[i]);
+				}
+				choice.setOption1(option1);
+			}else if("b.".equals(tokens[0])){
+				for(int i=1;i<tokenLength;i++){
+					option2 = option2 + " " + parseMsg(tokens[i]);
+				}
+				choice.setOption2(option2);
 				choice.createChoice();
 				break;
 			}
 		}	
-		
 	}
 
 	public String parseMsg(String statement){

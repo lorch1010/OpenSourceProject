@@ -1,4 +1,6 @@
 package utilities;
+import java.util.ArrayList;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -30,7 +32,7 @@ public class ViewResolver implements EventHandler<Event>{
 		return controller.getChoice();
 	}
 	
-	public Button getButton(){
-		return controller.getButton();
+	public ArrayList<Button> getButtons(){
+		return controller.getButtons();
 	}
 }

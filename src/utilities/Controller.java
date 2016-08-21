@@ -1,4 +1,6 @@
 package utilities;
+import java.util.ArrayList;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -14,5 +16,5 @@ public interface Controller extends EventHandler<Event>{
 	
 	public Group getChoice();
 	
-	public Button getButton();
+	public ArrayList<Button> getButtons();
 }

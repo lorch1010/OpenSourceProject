@@ -1,4 +1,5 @@
 package visual;
+import java.util.ArrayList;
 
 import javafx.scene.Group;
 import javafx.scene.effect.*;
@@ -8,25 +9,29 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-
 public class Choice extends Group{
 	final double MARGIN = 25; 
 	// fields
-	private String content_1;
-	private String content_2;
 
 	private VBox vbox = new VBox(20);
-	private Button button1 = new Button("Invite her?");
-	private Button button2 = new Button("Whatever, I don't care.");
-
-	public Choice(String content_1, String content_2){
-		this.content_1 = content_1;
-		this.content_2 = content_2;	
-	}
+	private Button button1 = new Button();
+	private Button button2 = new Button();
+	private ArrayList<Button> buttons = new ArrayList<Button>();
 
 	public Choice(){
 		//createChoice();
+		buttons.add(button1);
+		buttons.add(button2);
 	}
+	
+	public void setOption1(String option){
+		button1.setText(option);
+	}
+	
+	public void setOption2(String option){
+		button2.setText(option);
+	}
+	
 
 	public void createChoice(){
 		//vbox = new VBox(20);
@@ -50,8 +55,8 @@ public class Choice extends Group{
 		getChildren().add(vbox);	
 	}
 	
-	public Button getButton(){
-		return button1;
+	public ArrayList<Button> getButtons(){
+		return buttons;
 	}
 	
 	public void clear(){

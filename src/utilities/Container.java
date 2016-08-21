@@ -16,9 +16,16 @@ public class Container extends AnimationTimer{
 
 	public void processEvent(){
 		this.canvas.setOnMouseClicked(resolver);
-		if(this.resolver.getButton() != null){
-			this.resolver.getButton().setOnMouseClicked(resolver);
+		
+		if(!this.resolver.getButtons().isEmpty()){
+			for(int i=0;i<this.resolver.getButtons().size();i++){
+				this.resolver.getButtons().get(i).setOnMouseClicked(resolver);
+			}
 		}
+		
+		/*if(this.resolver.getButton() != null){
+			this.resolver.getButton().setOnMouseClicked(resolver);
+		}*/
 	}
 
 	public Parent getSurface(){
