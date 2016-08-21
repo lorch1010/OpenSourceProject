@@ -42,11 +42,9 @@ public class Choice extends Group{
 		vbox.setMinWidth(300);
 		vbox.setMaxWidth(450);
 
-		//button1 = new Button("TEST Button1");
 		button1.setId("btn");
 		buttonDesign(button1);
-
-		//button2 = new Button(" TEST Button2");
+		
 		button2.setId("btn");
 		buttonDesign(button2);
 

@@ -22,10 +22,7 @@ public class Container extends AnimationTimer{
 				this.resolver.getButtons().get(i).setOnMouseClicked(resolver);
 			}
 		}
-		
-		/*if(this.resolver.getButton() != null){
-			this.resolver.getButton().setOnMouseClicked(resolver);
-		}*/
+
 	}
 
 	public Parent getSurface(){
@@ -53,6 +50,5 @@ public class Container extends AnimationTimer{
 	@Override
 	public void handle(long now){
 		resolver.renderView(canvas.getGraphicsContext2D());
-		//shutdown();	
 	}
 }
