@@ -129,10 +129,6 @@ public class ScriptController implements Controller{
 			String[] tokens = script.split("\\s");
 			
 			int tokenLength = tokens.length;
-			/*for(int i=0;i<tokenLength;i++){
-				System.out.println(tokens[i]);
-			}*/
-	
 				
 			if("set".equals(tokens[0])){
 				vars.put("#{" + tokens[1] + "}", tokens[3]);
