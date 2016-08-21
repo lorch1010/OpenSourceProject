@@ -1,4 +1,5 @@
-package basic;
+package visual;
+
 import javafx.scene.Group;
 import javafx.scene.effect.*;
 import javafx.event.EventHandler;

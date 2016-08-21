@@ -4,8 +4,6 @@ import java.util.Optional;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
-import utilities.Container;
-import utilities.ScriptController;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;

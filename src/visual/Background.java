@@ -1,5 +1,6 @@
-package basic;
+package visual;
 import javafx.scene.image.Image;
+import utilities.ResourceManager;
 
 public class Background{
 	private Image bgImage;

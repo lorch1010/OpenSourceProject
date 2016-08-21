@@ -1,4 +1,4 @@
-package basic;
+package utilities;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;

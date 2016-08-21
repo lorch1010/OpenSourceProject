@@ -1,4 +1,4 @@
-package basic;
+package utilities;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Parent;
