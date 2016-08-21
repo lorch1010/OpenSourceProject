@@ -15,8 +15,8 @@ public class Choice extends Group{
 	private String content_2;
 
 	private VBox vbox = new VBox(20);
-	private Button button1 = new Button("Invite her");
-	private Button button2 = new Button("Give up");
+	private Button button1 = new Button("Invite her?");
+	private Button button2 = new Button("Whatever, I don't care.");
 
 	public Choice(String content_1, String content_2){
 		this.content_1 = content_1;
