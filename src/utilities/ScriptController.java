@@ -1,4 +1,4 @@
-package basic;
+package utilities;
 import java.lang.StringBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,6 +11,10 @@ import javafx.scene.Group;
 import javafx.event.Event;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import visual.Background;
+import visual.Cg;
+import visual.Choice;
+import visual.DialogueBuilder;
 import javafx.scene.control.Button;
 
 public class ScriptController implements Controller{	
