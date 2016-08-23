@@ -17,6 +17,8 @@ public class Choice extends Group{
 	private Button button1 = new Button();
 	private Button button2 = new Button();
 	private ArrayList<Button> buttons = new ArrayList<Button>();
+	private int optionId = 0;
+	//private boolean buttonInitialized = false;
 
 	public Choice(){
 		//createChoice();
@@ -32,7 +34,6 @@ public class Choice extends Group{
 		button2.setText(option);
 	}
 	
-
 	public void createChoice(){
 		//vbox = new VBox(20);
 		vbox.setLayoutX(450);
@@ -41,16 +42,37 @@ public class Choice extends Group{
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setMinWidth(300);
 		vbox.setMaxWidth(450);
-
+	
+		DropShadow drop = new DropShadow();
 		button1.setId("btn");
 		buttonDesign(button1);
-		
+
+		button1.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>(){
+	    		@Override public void handle(MouseEvent e){
+	    			button1.setEffect(drop);
+	    			
+	    			// set optionId as 0
+	    			optionId = 0;
+	    		}
+	    	});
+
 		button2.setId("btn");
 		buttonDesign(button2);
+		
+		button2.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>(){
+	    		@Override public void handle(MouseEvent e){
+	    			button2.setEffect(drop);
+	    			
+	    			// set optionId as 1
+	    			optionId = 1;
+	    		}
+	    	});
 
 		vbox.getChildren().addAll(button1, button2);
-
 		getChildren().add(vbox);	
+		
+		//buttonInitialized = true;
+		
 	}
 	
 	public ArrayList<Button> getButtons(){
@@ -60,18 +82,22 @@ public class Choice extends Group{
 	public void clear(){
 		getChildren().clear();
 	}
-
+	
+	public int getOptionId(){
+		return optionId;
+	}
+	/*public void setButton(){
+		buttonInitialized = true;
+	}
+	
+	public boolean buttonEmpty(){
+		return buttonInitialized;
+	}*/
+	
 	public void buttonDesign(Button button){
-		DropShadow drop = new DropShadow();
 		button.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
 	    		@Override public void handle(MouseEvent e){
 	    			button.setId("btn-pressed");
-	    		}
-	    	});
-
-		button.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button.setEffect(drop);
 	    		}
 	    	});
 
@@ -86,5 +112,6 @@ public class Choice extends Group{
 	    			button.setId("btn");
 	    		}
 	    	});	
+		
 	}
 } 

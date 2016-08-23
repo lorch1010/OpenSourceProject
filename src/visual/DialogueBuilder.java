@@ -66,11 +66,9 @@ public class DialogueBuilder extends Group{
 	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
 		Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
 
-		//nameText.setText(name);
 		nameText.setFont(nameFont);
 		nameText.setFill(Color.WHITE);
-	
-		//text.setText(content);	  		 
+		  		 
 	    text.setX(rect.getX() + MARGIN);
 	    text.setY(rect.getY() + MARGIN);
 	    text.setWrappingWidth(rect.getWidth() - MARGIN * 2);

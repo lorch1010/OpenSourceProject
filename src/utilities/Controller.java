@@ -17,4 +17,6 @@ public interface Controller extends EventHandler<Event>{
 	public Group getChoice();
 	
 	public ArrayList<Button> getButtons();
+	
+	//public boolean buttonEmpty();
 }

@@ -16,19 +16,17 @@ public class Container extends AnimationTimer{
 
 	public void processEvent(){
 		this.canvas.setOnMouseClicked(resolver);
-		
-		if(!this.resolver.getButtons().isEmpty()){
-			for(int i=0;i<this.resolver.getButtons().size();i++){
-				this.resolver.getButtons().get(i).setOnMouseClicked(resolver);
-			}
+	}
+	
+	public void processButtonEvent(){
+		for(int i=0;i<this.resolver.getButtons().size();i++){
+			this.resolver.getButtons().get(i).setOnMouseClicked(resolver);
 		}
-
 	}
 
 	public Parent getSurface(){
 		root = new Group();
-		
-		// add canvas and dialogue to the root
+		// add canvas, dialogue and choice to the root
 		root.getChildren().add(canvas);
 		root.getChildren().add(resolver.getDialogue());
 		if(resolver.getChoice() != null){
@@ -40,6 +38,7 @@ public class Container extends AnimationTimer{
 
 	public void startup(){
 		processEvent();
+		processButtonEvent();
 		start();
 	}
 
@@ -49,6 +48,13 @@ public class Container extends AnimationTimer{
 
 	@Override
 	public void handle(long now){
+		//System.out.println(this.resolver.buttonEmpty());
 		resolver.renderView(canvas.getGraphicsContext2D());
+			
+		/*if(this.resolver.buttonEmpty()){
+			processButtonEvent();
+		}else{
+			processEvent();
+		}*/
 	}
 }

@@ -126,22 +126,7 @@ select
 a. Invite her
 b. Give up
 
-msg Me Don't say that. Come with us. Me + him = boring.
+if 0 choice1.sc
 
-cg del #{girl}
-cg #{friend}
-msg Patrick Wow, I can't pretend that I didn't hear that.
+if 1 choice2.sc
 
-cg del #{friend}
-cg #{girl}
-msg Ivy Alright. When should we go then?
-
-cg del #{girl}
-cg #{friend2}
-msg Patrick Saturday at 10?
-
-msg Me Cool.
-
-cg del #{friend2}
-cg #{girlSmile}
-msg Ivy Okay.
