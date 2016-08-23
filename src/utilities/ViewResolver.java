@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 
+
 public class ViewResolver implements EventHandler<Event>{
 	private Controller controller;
 	
@@ -35,4 +36,8 @@ public class ViewResolver implements EventHandler<Event>{
 	public ArrayList<Button> getButtons(){
 		return controller.getButtons();
 	}
+	
+	/*public boolean buttonEmpty(){
+		return controller.buttonEmpty();
+	}*/
 }

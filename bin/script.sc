@@ -126,7 +126,8 @@ select
 a. Invite her
 b. Give up
 
-msg Me Don't say that. Come with us. Me + him = boring.
+if 0 Me Don't say that. Come with us. Me + him = boring.
+if 1 Me Okay. Have a great weekend then. 
 
 cg del #{girl}
 cg #{friend}

@@ -1,5 +1,6 @@
 package utilities;
 import java.lang.StringBuilder;
+import java.lang.Integer;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class ScriptController implements Controller{
 	private String option2;
 	private DialogueBuilder dialogue;
 	private Choice choice;
+	private int optionSelected;
 
 	public ScriptController(String scriptFile){
 		this.vars = new HashMap<String, String>();
@@ -83,7 +85,6 @@ public class ScriptController implements Controller{
 
 	@Override
 	public void draw(GraphicsContext context){
-	
 		// draw background
 		for(Background bg: bgs.values()){
 			context.drawImage(bg.getImage(), bg.getX(), bg.getY());
@@ -94,7 +95,7 @@ public class ScriptController implements Controller{
 			context.drawImage(cg.getImage(), cg.getX(), cg.getY());
 		}
 
-		// add dialogue last
+		// add dialogue at the end
 		if((message != null) && !(message.isEmpty())){	
 			dialogue.setName(nameToDisplay);
 			dialogue.setText(message);
@@ -116,7 +117,16 @@ public class ScriptController implements Controller{
 	public ArrayList<Button> getButtons(){
 		return choice.getButtons();
 	}
+	
+	/*public boolean buttonEmpty(){
+		return choice.buttonEmpty();
+	}*/
 
+	public int getOptionId(){
+		optionSelected = choice.getOptionId();
+		return optionSelected;
+	}
+	
 	public void invokeScript(){
 		this.message = "";
 		this.nameToDisplay = "";
@@ -125,7 +135,6 @@ public class ScriptController implements Controller{
 		
 		while(scripts.hasNext()){
 			String script = scripts.getNext();
-
 			String[] tokens = script.split("\\s");
 			
 			int tokenLength = tokens.length;
@@ -161,6 +170,7 @@ public class ScriptController implements Controller{
 				}
 			}else if("select".equals(tokens[0])){
 				// do nothing and proceed to the next line
+				//choice.setButton();
 				
 			}else if("a.".equals(tokens[0])){
 				for(int i=1;i<tokenLength;i++){
@@ -173,9 +183,22 @@ public class ScriptController implements Controller{
 				}
 				choice.setOption2(option2);
 				choice.createChoice();
+				
 				break;
+			}else if("if".equals(tokens[0])){
+				if(getOptionId() == Integer.parseInt(tokens[1])){
+					nameToDisplay = parseMsg(tokens[2]);	
+					
+					for(int i=3;i<tokenLength;i++){
+						message = message + " " + parseMsg(tokens[i]);
+					}				
+					break;	
+				}else{
+					continue;
+				}
 			}
-		}	
+		}
+		
 	}
 
 	public String parseMsg(String statement){
