@@ -30,7 +30,6 @@ public class ScriptController implements Controller{
 	private String option2;
 	private DialogueBuilder dialogue;
 	private Choice choice;
-	private int optionSelected;
 
 	public ScriptController(String scriptFile){
 		this.vars = new HashMap<String, String>();
@@ -123,8 +122,7 @@ public class ScriptController implements Controller{
 	}*/
 
 	public int getOptionId(){
-		optionSelected = choice.getOptionId();
-		return optionSelected;
+		return choice.getOptionId();
 	}
 	
 	public void invokeScript(){
@@ -169,7 +167,7 @@ public class ScriptController implements Controller{
 					bgs.put(tokens[1], new Background(vars.get(tokens[1]), 0, 0));	
 				}
 			}else if("select".equals(tokens[0])){
-				// do nothing and proceed to the next line
+				// do nothing and proceed to the next line of code
 				//choice.setButton();
 				
 			}else if("a.".equals(tokens[0])){
@@ -187,18 +185,15 @@ public class ScriptController implements Controller{
 				break;
 			}else if("if".equals(tokens[0])){
 				if(getOptionId() == Integer.parseInt(tokens[1])){
-					nameToDisplay = parseMsg(tokens[2]);	
-					
-					for(int i=3;i<tokenLength;i++){
-						message = message + " " + parseMsg(tokens[i]);
-					}				
+					this.readScript(tokens[2]);
+					this.invokeScript();
 					break;	
 				}else{
+					// go to the next line
 					continue;
 				}
 			}
-		}
-		
+		}	
 	}
 
 	public String parseMsg(String statement){
