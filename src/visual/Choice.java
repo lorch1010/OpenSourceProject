@@ -42,59 +42,31 @@ public class Choice extends Group{
 		vbox.setAlignment(Pos.CENTER);
 		vbox.setMinWidth(300);
 		vbox.setMaxWidth(450);
-
-		button1.setId("btn");
+	
 		DropShadow drop = new DropShadow();
-		button1.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button1.setId("btn-pressed");
-	    		}
-	    	});
+		button1.setId("btn");
+		buttonDesign(button1);
 
 		button1.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>(){
 	    		@Override public void handle(MouseEvent e){
 	    			button1.setEffect(drop);
+	    			
+	    			// set optionId as 0
 	    			optionId = 0;
 	    		}
 	    	});
 
-		button1.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button1.setEffect(null);
-	    		}
-	    	});
-
-		button1.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button1.setId("btn");
-	    		}
-	    	});	
-		
 		button2.setId("btn");
-		button2.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button2.setId("btn-pressed");
-	    		}
-	    	});
-
+		buttonDesign(button2);
+		
 		button2.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>(){
 	    		@Override public void handle(MouseEvent e){
 	    			button2.setEffect(drop);
+	    			
+	    			// set optionId as 1
 	    			optionId = 1;
 	    		}
 	    	});
-
-		button2.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button2.setEffect(null);
-	    		}
-	    	});
-
-		button2.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    		@Override public void handle(MouseEvent e){
-	    			button2.setId("btn");
-	    		}
-	    	});	
 
 		vbox.getChildren().addAll(button1, button2);
 		getChildren().add(vbox);	
@@ -121,4 +93,25 @@ public class Choice extends Group{
 	public boolean buttonEmpty(){
 		return buttonInitialized;
 	}*/
+	
+	public void buttonDesign(Button button){
+		button.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
+	    		@Override public void handle(MouseEvent e){
+	    			button.setId("btn-pressed");
+	    		}
+	    	});
+
+		button.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>(){
+	    		@Override public void handle(MouseEvent e){
+	    			button.setEffect(null);
+	    		}
+	    	});
+
+		button.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
+	    		@Override public void handle(MouseEvent e){
+	    			button.setId("btn");
+	    		}
+	    	});	
+		
+	}
 } 
