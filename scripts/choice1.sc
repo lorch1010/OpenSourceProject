@@ -2,9 +2,9 @@ cg del
 cg #{girl}
 msg Me Don't say that. Me + him = boring.
 cg del #{girl}
-cg #{friend}
+cg #{friendNotHappy}
 msg Patrick Wow, I can't pretend that I didn't hear that.
-cg del #{friend}
+cg del #{friendNotHappy}
 cg #{girl}
 msg Ivy Alright. When should we go then?
 
