@@ -1,9 +1,12 @@
 set school = schoolPlayground.jpg
 set classroom = classroom.jpg
+
 set teacher = male.png
+
 set friendSmile = friendSmile.png
-set friend = friend.png
+set friendNotHappy = friend.png
 set friend2 = friend2.png
+
 set girl = girl.png
 set girlSmile = girlSmile.png
 
@@ -51,7 +54,7 @@ msg Patrick C'mon, man. The first thing you'll need to do when you got to a new 
 msg Me ...
 
 cg del #{friendSmile}
-cg #{friend}
+cg #{friendNotHappy}
 msg Patrick Why you staring at me like that?
 
 msg Me Nothing. 

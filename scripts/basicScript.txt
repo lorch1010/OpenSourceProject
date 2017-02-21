@@ -127,6 +127,15 @@ msg Patrick THAT was a great idea!
 
 msg Me Are you guys kidding me? How old are you?
 
+cg del #{friendSmile}
+cg #{friendNotHappy}
 msg Patrick Are you going or not?
 
 msg Me All right. I'll go with you. 
+
+cg del
+bg del
+bg #{school}
+cg #{friendNotHappy}
+msg Patrick God, it's so cold outside.
+
