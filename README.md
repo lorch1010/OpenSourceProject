@@ -69,7 +69,7 @@ Please check the [LICENSE](https://github.com/lorch1010/OpenSourceProject/blob/m
 ## Contact Me
 zixuchen@pdx.edu
 
-Let me know if you'd like to join me or give some suggestions on building the game.
+Let me know if you'd like to join me or give any suggestions on building the game.
 
 
                      

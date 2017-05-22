@@ -162,7 +162,8 @@ public class Window extends Application{
 	    root.getChildren().addAll(canvas, vbox);
 
 	    /*-------------------------READ THE SCRIPT-----------------------------*/
-	    ScriptController sc = new ScriptController("initScript.sc");
+	    //ScriptController sc = new ScriptController("initScript.sc");
+	    ScriptController sc = new ScriptController("basicScript.txt");
 	    /*---------------------------------------------------------------------------*/
 	    
 	    

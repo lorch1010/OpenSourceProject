@@ -1,9 +1,12 @@
 set school = schoolPlayground.jpg
 set classroom = classroom.jpg
+
 set teacher = male.png
+
 set friendSmile = friendSmile.png
-set friend = friend.png
+set friendNotHappy = friend.png
 set friend2 = friend2.png
+
 set girl = girl.png
 set girlSmile = girlSmile.png
 
@@ -51,7 +54,7 @@ msg Patrick C'mon, man. The first thing you'll need to do when you got to a new 
 msg Me ...
 
 cg del #{friendSmile}
-cg #{friend}
+cg #{friendNotHappy}
 msg Patrick Why you staring at me like that?
 
 msg Me Nothing. 
@@ -108,25 +111,31 @@ msg Ivy Glad talking to you. I'll talk to you later. Time for the class.
 
 msg Me Okay. 
 
-cg del
+cg del #{girlSmile}
 cg #{friend2}
-msg Patrick Wanna have some fun this weekend?
+msg Patrick Wanna go eat something?
 
-msg Me Where? I don't care.
-
-msg Patrick To the amusement park?
-
-msg Me Sure. Haven't been there for a long time.
+msg Me I don't know what to eat. Plus, so many people in the cafeteria right now.
 
 cg del #{friend2}
 cg #{girl}
-msg Ivy I don't really want to go, to be honest. I prefer to stay at home and study for the upcoming test next week.
+msg Ivy You wanna hang out outside a little bit? A snowball fight might help pass the time. 
 
-select
-a. Invite her
-b. Give up
+cg del #{girl}
+cg #{friendSmile}
+msg Patrick THAT was a great idea!
 
-if 0 choice1.sc
+msg Me Are you guys kidding me? How old are you?
 
-if 1 choice2.sc
+cg del #{friendSmile}
+cg #{friendNotHappy}
+msg Patrick Are you going or not?
+
+msg Me All right. I'll go with you. 
+
+cg del
+bg del
+bg #{school}
+cg #{friendNotHappy}
+msg Patrick God, it's so cold outside.
 
