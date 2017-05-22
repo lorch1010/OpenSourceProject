@@ -35,7 +35,6 @@ public class Choice extends Group{
 	}
 	
 	public void createChoice(){
-		//vbox = new VBox(20);
 		vbox.setLayoutX(450);
 		vbox.setLayoutY(150);
 		vbox.setMinWidth(300);

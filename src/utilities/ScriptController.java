@@ -125,6 +125,9 @@ public class ScriptController implements Controller{
 		return choice.getOptionId();
 	}
 	
+	
+	/*---------------------------METHOD NEEDS TO BE UPDATED---------------------------------------*/
+	/*---------------------------AS THE PRIMARY SCRIPT LANGUAGE CHANGED TO CHINESE----------------*/
 	public void invokeScript(){
 		this.message = "";
 		this.nameToDisplay = "";
@@ -133,7 +136,7 @@ public class ScriptController implements Controller{
 		
 		while(scripts.hasNext()){
 			String script = scripts.getNext();
-			String[] tokens = script.split("\\s");
+			String[] tokens = script.split("\\s");  
 			
 			int tokenLength = tokens.length;
 				
