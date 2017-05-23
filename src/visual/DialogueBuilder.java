@@ -16,7 +16,7 @@ public class DialogueBuilder extends Group{
 	// class fields	
 	private String content;
 	private String name;
-	private Rectangle rect = new Rectangle();
+	private Rectangle textRect = new Rectangle();
 	private Rectangle nameRect = new Rectangle();
  	private Text text = new Text();
 	private Text nameText = new Text(65, 440, "");
@@ -25,7 +25,7 @@ public class DialogueBuilder extends Group{
 	public DialogueBuilder(String name, String content){
 		this.name = name;
 		this.content = content;	
-		//this.rect = getRect();
+		//this.textRect = getRect();
 		//this.text = getText();
 		setName(name);
 		setText(content);
@@ -39,18 +39,18 @@ public class DialogueBuilder extends Group{
 	}
 	
 	public Rectangle getRect(){
-		return rect;
+		return textRect;
  	}	
 
 	public void createRectangle(){
-		// declare rect parameters
-		rect.setX(MARGIN * 2);
-		rect.setY(BASE_HEIGHT * 2 / 3 - MARGIN);
-		rect.setWidth(BASE_WIDTH - MARGIN * 4);
-		rect.setHeight(200);
-		rect.setArcWidth(30);
-		rect.setArcHeight(30);
-		rect.setFill(Color.BLACK);
+		// declare textRect parameters
+		textRect.setX(MARGIN * 2);
+		textRect.setY(BASE_HEIGHT * 2 / 3 - MARGIN);
+		textRect.setWidth(BASE_WIDTH - MARGIN * 4);
+		textRect.setHeight(200);
+		textRect.setArcWidth(30);
+		textRect.setArcHeight(30);
+		textRect.setFill(Color.BLACK);
 
 		// declare nameRect parameters
 		nameRect.setX(50);
@@ -63,15 +63,32 @@ public class DialogueBuilder extends Group{
  	}
 
 	public void createText(){
-	    Font textFont = Font.font("Courier", FontWeight.THIN, 30);
-		Font nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
+		//Declare and initialize variables for name and text fonts
+		Font textFont = null;
+		Font nameFont = null;
+		//Detect user's OS first
+		String osName="";
+		// Getting OS name
+		osName = System.getProperty("os.name");
+		 
+		//Set fonts for different Operating Systems
+		if (osName.toLowerCase().indexOf("win") >= 0) {
+			textFont = Font.font("Microsoft YaHei", FontWeight.THIN, 30);
+			nameFont = Font.font("Microsoft YaHei", FontWeight.BOLD, 32);
+		} else if (osName.toLowerCase().indexOf("mac") >= 0) {
+			textFont = Font.font("PingFang SC", FontWeight.THIN, 30);
+			nameFont = Font.font("PingFang SC", FontWeight.BOLD, 32);
+		} else if (osName.toLowerCase().indexOf("nix") >= 0 || osName.toLowerCase().indexOf("nux") >= 0 || osName.toLowerCase().indexOf("aix") > 0 ) {
+			textFont = Font.font("Courier", FontWeight.THIN, 30);
+			nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
+		} 
 
 		nameText.setFont(nameFont);
 		nameText.setFill(Color.WHITE);
 		  		 
-	    text.setX(rect.getX() + MARGIN);
-	    text.setY(rect.getY() + MARGIN);
-	    text.setWrappingWidth(rect.getWidth() - MARGIN * 2);
+	    text.setX(textRect.getX() + MARGIN);
+	    text.setY(textRect.getY() + MARGIN);
+	    text.setWrappingWidth(textRect.getWidth() - MARGIN * 2);
 	    text.setTextOrigin(VPos.TOP);
 	    text.setFont(textFont);
 	    text.setFill(Color.WHITE);
@@ -95,7 +112,7 @@ public class DialogueBuilder extends Group{
 	}
 
 	public void addAllContents(){
-		getChildren().addAll(rect, nameRect);
+		getChildren().addAll(textRect, nameRect);
 		getChildren().addAll(text, nameText);
 	}
 }
