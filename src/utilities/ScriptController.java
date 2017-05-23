@@ -136,8 +136,8 @@ public class ScriptController implements Controller{
 		
 		while(scripts.hasNext()){
 			String script = scripts.getNext();
-			String[] tokens = script.split("\\s");  
-			
+			String[] tokens = script.split("\\s");  //Split each line of scripts by spaces
+						
 			int tokenLength = tokens.length;
 				
 			if("set".equals(tokens[0])){
@@ -156,7 +156,8 @@ public class ScriptController implements Controller{
 					nameToDisplay = parseMsg(tokens[1]);	
 						
 					for(int i=2;i<tokenLength;i++){
-						message = message + " " + parseMsg(tokens[i]);
+						//message = message + " " + parseMsg(tokens[i]);
+						message = parseMsg(tokens[i]);
 					}				
 					break;		
 			}else if("bg".equals(tokens[0])){
