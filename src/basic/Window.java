@@ -32,6 +32,7 @@ public class Window extends Application{
 	Button exitButton;
 	Stage theStage;
 	Scene theScene;
+	
 
 	public static void main(String[] args){
         launch(args);
@@ -54,7 +55,7 @@ public class Window extends Application{
 	    GraphicsContext gc = canvas.getGraphicsContext2D();
 	    
         // read image file
-	    Image bg = new Image("schoolBuilding.jpg", 1280, 720, false, false);	
+	    Image bg = new Image("schoolBuilding.jpg", 1280, 720, false, false);
 	  
   	    // draw the background image
 	    gc.drawImage(bg, 0, 0);	    
@@ -74,86 +75,21 @@ public class Window extends Application{
 	    vbox.setLayoutY(385);
 	    vbox.setAlignment(Pos.BOTTOM_CENTER);
 	    
-
-	    // choose the bloom effect for the buttons
-	    Bloom bloom = new Bloom();
-	    
 	    // create the button "Start Game"
-	    startButton = new Button("Start Game");
-	    startButton.setId("lion-default");
-	    
-	    startButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		startButton.setEffect(bloom);
-	    	}
-	    });
-	    startButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		startButton.setEffect(null);
-	    	}
-	    });
+	    startButton = setButton("Start Game");
 	    startButton.setOnAction(e-> ButtonClicked(e));	
-        
 
-        // create the button "Load Game"
-	    Button loadButton = new Button("Load Game");
-	    loadButton.setId("lion-default");
-	    
-	    loadButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		loadButton.setEffect(bloom);
-	    	}
-	    });
-	    loadButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		loadButton.setEffect(null);
-	    	}
-	    });
+        // create the button "Load Game"    
+	    Button loadButton = setButton("Load Game");
 	    
 	    // create the button "Settings"
-	    Button settingsButton = new Button("Settings");
-	    settingsButton.setId("lion-default");
-	    
-	    settingsButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		settingsButton.setEffect(bloom);
-	    	}
-	    });
-	    settingsButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		settingsButton.setEffect(null);
-	    	}
-	    });
+	    Button settingsButton = setButton("Settings");
 	    
 	    // create the button "Credits"
-	    Button creditsButton = new Button("Credits");
-	    creditsButton.setId("lion-default");
+	    Button creditsButton = setButton("Credits");
 	    
-	    creditsButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		creditsButton.setEffect(bloom);
-	    	}
-	    });
-	    creditsButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		creditsButton.setEffect(null);
-	    	}
-	    });
-	    
-	    // create the button "Exit Game"	    
-	    exitButton = new Button("Exit Game");
-	    exitButton.setId("lion-default");
-	    
-	    exitButton.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		exitButton.setEffect(bloom);
-	    	}
-	    });
-	    exitButton.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
-	    	@Override public void handle(MouseEvent e){
-	    		exitButton.setEffect(null);
-	    	}
-	    });
+	    // create the button "Exit Game"	  
+	    exitButton = setButton("Exit Game");
 	    exitButton.setOnAction(e-> ButtonClicked(e));	   
 
 	    // add all the buttons to the vbox just created
@@ -163,7 +99,8 @@ public class Window extends Application{
 
 	    /*-------------------------READ THE SCRIPT-----------------------------*/
 	    //ScriptController sc = new ScriptController("initScript.sc");
-	    ScriptController sc = new ScriptController("basicScript.txt");
+	    //ScriptController sc = new ScriptController("basicScript.txt");
+	    ScriptController sc = new ScriptController("basicStoryline.txt");
 	    /*---------------------------------------------------------------------------*/
 	    
 	    
@@ -187,6 +124,29 @@ public class Window extends Application{
 	    primaryStage.show();    
 	}
 	
+	//Set a specific style for a button
+	public Button setButton(String buttonName){
+		Button result = new Button(buttonName);
+	    result.setId("lion-default");
+	    //Choose the bloom effect for the button
+	    Bloom bloom = new Bloom();
+	    
+	    result.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>(){
+	    	@Override public void handle(MouseEvent e){
+	    		result.setEffect(bloom);
+	    	}
+	    });
+	    result.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>(){
+	    	@Override public void handle(MouseEvent e){
+	    		result.setEffect(null);
+	    	}
+	    });
+	    
+	    return result;
+	  	
+	}
+	
+	//Define actions when Start and Exit buttons are pressed
 	public void ButtonClicked(ActionEvent e){
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Message");
