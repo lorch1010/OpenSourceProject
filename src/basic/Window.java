@@ -29,7 +29,7 @@ import javafx.scene.input.MouseEvent;
 public class Window extends Application{
     private Container container;
 
-    // declare global variables
+    // Declare global variables
     Button startButton;
     Button exitButton;
     Stage theStage;
@@ -41,29 +41,29 @@ public class Window extends Application{
     }
 
     public void start(Stage primaryStage){
-        // initialize theStage to primaryStage first
+        // Initialize theStage to primaryStage first
         theStage = primaryStage;
 
-        // set the stage title to "School Memories"
+        // Set the stage title to "School Memories"
         primaryStage.setTitle("School Memories");
         primaryStage.setWidth(1280);
         primaryStage.setHeight(720);
 
-        // roots setup
+        // Root setup
         Group root = new Group();
 
-        // canvas initializations
+        // Canvas initialization
         Canvas canvas = new Canvas(1280, 720);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        // read image file
+        // Read image file
         Image bg = new Image(new File("resources/backgrounds/schoolBuilding.jpg").toURI().toString(),
                 1280, 720, false, false);
 
-        // draw the background image
+        // Draw the background
         gc.drawImage(bg, 0, 0);
 
-        // parameters for the main title
+        // Setup and draw the main title
         gc.setFill(Color.RED);
         gc.setStroke(Color.ORANGERED);
         gc.setLineWidth(2);
@@ -72,32 +72,33 @@ public class Window extends Application{
         gc.fillText("School Memories", 425, 200);
         gc.strokeText("School Memories", 425, 200);
 
-        // create a vbox to store different buttons
+        // Create a vbox to store different buttons
         VBox vbox = new VBox(20);  // spacing = 20
         vbox.setLayoutX(600);
         vbox.setLayoutY(385);
         vbox.setAlignment(Pos.BOTTOM_CENTER);
 
-        // create the button "Start Game"
+        // Create the button "Start Game"
         startButton = setButton("Start Game");
         startButton.setOnAction(e-> ButtonClicked(e));
 
-        // create the button "Load Game"
+        // Create the button "Load Game"
         Button loadButton = setButton("Load Game");
 
-        // create the button "Settings"
+        // Create the button "Settings"
         Button settingsButton = setButton("Settings");
 
-        // create the button "Credits"
+        // Create the button "Credits"
         Button creditsButton = setButton("Credits");
 
-        // create the button "Exit Game"
+        // Create the button "Exit Game"
         exitButton = setButton("Exit Game");
         exitButton.setOnAction(e-> ButtonClicked(e));
 
-        // add all the buttons to the vbox just created
+        // Add all the buttons to the vbox just created
         vbox.getChildren().addAll(startButton, loadButton, settingsButton, creditsButton, exitButton);
 
+        // Add the canvas and the vbox to the root
         root.getChildren().addAll(canvas, vbox);
 
 	    /*-------------------------READ THE SCRIPT-----------------------------*/
@@ -107,16 +108,17 @@ public class Window extends Application{
 	    /*---------------------------------------------------------------------------*/
 
 
-        // scenes setup
+        // Scenes setup
         Scene startScene = new Scene(root);
         startScene.getStylesheets().add("buttonStyle.css");
         primaryStage.setScene(startScene);
 
-        // create a canvas for all other CGs
+        // Create a canvas for all other CGs
         Canvas cgCanvas = new Canvas(1280, 720);
         GraphicsContext cgGC = cgCanvas.getGraphicsContext2D();
-        // initial background after the game starts
-        Image initBackground = new Image(new File("resources/backgrounds/schoolPlayground.jpg").toURI().toString(), 1280, 720, false, true);
+        // Draw initial background after the game starts
+        Image initBackground = new Image(new File("resources/backgrounds/schoolPlayground.jpg").toURI().toString(),
+                1280, 720, false, true);
 
         cgGC.drawImage(initBackground, 0, 0);
 
