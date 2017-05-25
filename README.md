@@ -1,13 +1,13 @@
 School-Memories  [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 ===============
-Copyright &copy; 2016 Jack Chen
+Copyright &copy; 2017 Jack Chen
 
 ## Introduction
 This is a project for the 8-week curriculum of **Open Source Software Development** at **Portland State University** in Summer 2016.
 
 It's designed to be a typical visual novel game that mainly focuses on telling gamers an interesting story, which can vary for some choice they've made in the dialogues. The storylines of this game are based on my personal experiences during high school. Character names in the game may be revised properly for privacy reasons. 
 
-Due to the limit of time and unfamiliarity of JavaFX packages, the game currently is not complete yet. 
+Due to the time required to write scripts for the game and unfamiliarity of JavaFX packages, the game currently is not complete yet. 
 
 ## Technical Support
 [Introduction to Java AVG Development](http://blog.csdn.net/cping1982/article/details/3868211)
@@ -16,14 +16,11 @@ Due to the limit of time and unfamiliarity of JavaFX packages, the game currentl
 
 Special thanks: [Zhou Haocheng](http://blog.zhouhaocheng.cn/) Thanks for helping me solve the issue of rendering images dynamically!
 
-## Background Image Resources By
+## Game Resources Provided By
 [HURA_](http://bbs.66rpg.com/forum.php?mod=viewthread&tid=398844&extra=page%3D1%26orderby%3Dheats)
 
 [蹲街大师](http://bbs.66rpg.com/forum.php?mod=viewthread&tid=705436&page=9#pid3838410)
 
-Thank you so much for providing these fantastic resources!
-
-## Character Image Resources By
 [倚楼空看尘世美](http://bbs.66rpg.com/home.php?mod=space&uid=17367864) 
 
 Thank you so much for providing these fantastic resources!
@@ -31,7 +28,7 @@ Thank you so much for providing these fantastic resources!
 ## Game Description
 **Programming language:** *Java*
 
-**Development tool:** *Eclipse Neon*
+**Development tool:** *Eclipse Neon*, *IntelliJ IDEA*
 
 **Applicable platforms:** *Linux & Windows*
 
@@ -54,6 +51,12 @@ Thank you so much for providing these fantastic resources!
 
 7. Hit **Apply** and **Run**. 
 
+*The primary develop IDE has been switched to IntelliJ IDEA, building with IntelliJ IDEA is high recommended.*
+### Building with IntelliJ IDEA
+1. Clone or download the project.
+
+
+
 ## Future Potential Improvements
 1. Add support for background music.
 
@@ -62,6 +65,8 @@ Thank you so much for providing these fantastic resources!
 3. Add basic functionalities or settings.
 
 4. Modify the script for better performance.
+
+5. Add Chinese support.
 
 ## License
 Please check the [LICENSE](https://github.com/lorch1010/OpenSourceProject/blob/master/LICENSE) file.
