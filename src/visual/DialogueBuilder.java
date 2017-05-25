@@ -8,12 +8,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.geometry.VPos;
 
 public class DialogueBuilder extends Group {
-    // declare global variables
+    // Declare constants
     final double BASE_WIDTH = 1280;
     final double BASE_HEIGHT = 720;
     final double MARGIN = 25;
 
-    // class fields
+    // Declare class fields
     private String content;
     private String name;
     private Rectangle textRect = new Rectangle();
@@ -21,7 +21,7 @@ public class DialogueBuilder extends Group {
     private Text text = new Text();
     private Text nameText = new Text(65, 440, "");
 
-    // class constructor
+    // Class constructor
     public DialogueBuilder(String name, String content) {
         this.name = name;
         this.content = content;
@@ -43,7 +43,7 @@ public class DialogueBuilder extends Group {
     }
 
     public void createRectangle() {
-        // declare textRect parameters
+        // Create the text rect
         textRect.setX(MARGIN * 2);
         textRect.setY(BASE_HEIGHT * 2 / 3 - MARGIN);
         textRect.setWidth(BASE_WIDTH - MARGIN * 4);
@@ -52,7 +52,7 @@ public class DialogueBuilder extends Group {
         textRect.setArcHeight(30);
         textRect.setFill(Color.BLACK);
 
-        // declare nameRect parameters
+        // Create the name rect
         nameRect.setX(50);
         nameRect.setY(400);
         nameRect.setWidth(200);
@@ -71,14 +71,15 @@ public class DialogueBuilder extends Group {
         // Getting OS name
         osName = System.getProperty("os.name");
 
-//Set fonts for different Operating Systems
-        if (osName.toLowerCase().indexOf("win") >= 0) {
+        //Set fonts for different Operating Systems
+        if (osName.toLowerCase().indexOf("win") >= 0) {  //If the OS is Windows
             textFont = Font.font("Microsoft YaHei", FontWeight.THIN, 30);
             nameFont = Font.font("Microsoft YaHei", FontWeight.BOLD, 32);
-        } else if (osName.toLowerCase().indexOf("mac") >= 0) {
+        } else if (osName.toLowerCase().indexOf("mac") >= 0) {  //If the OS is Mac
             textFont = Font.font("PingFang SC", FontWeight.THIN, 30);
             nameFont = Font.font("PingFang SC", FontWeight.BOLD, 32);
         } else if (osName.toLowerCase().indexOf("nix") >= 0 || osName.toLowerCase().indexOf("nux") >= 0 || osName.toLowerCase().indexOf("aix") > 0) {
+            //If the OS is Linux or Unix
             textFont = Font.font("Courier", FontWeight.THIN, 30);
             nameFont = Font.font("DejaVu Sans", FontWeight.BOLD, 32);
         }
@@ -94,10 +95,12 @@ public class DialogueBuilder extends Group {
         text.setFill(Color.WHITE);
     }
 
+    //Set the name text
     public void setName(String name) {
         nameText.setText(name);
     }
 
+    //Set the dialogue text
     public void setText(String content) {
         text.setText(content);
     }
