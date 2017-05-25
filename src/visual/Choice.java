@@ -11,8 +11,8 @@ import javafx.scene.layout.VBox;
 
 public class Choice extends Group{
     final double MARGIN = 25;
-    // fields
 
+    // Class fields
     private VBox vbox = new VBox(20);
     private Button button1 = new Button();
     private Button button2 = new Button();
@@ -50,7 +50,7 @@ public class Choice extends Group{
             @Override public void handle(MouseEvent e){
                 button1.setEffect(drop);
 
-                // set optionId as 0
+                // Set optionId as 0
                 optionId = 0;
             }
         });
@@ -62,7 +62,7 @@ public class Choice extends Group{
             @Override public void handle(MouseEvent e){
                 button2.setEffect(drop);
 
-                // set optionId as 1
+                // Set optionId as 1
                 optionId = 1;
             }
         });
