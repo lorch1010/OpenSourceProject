@@ -65,6 +65,7 @@ public class ScriptController implements Controller{
         }
     }
 
+    //Detect if the script is still running
     public boolean isRunning(){
         return scripts != null && scripts.hasNext();
     }
@@ -84,17 +85,17 @@ public class ScriptController implements Controller{
 
     @Override
     public void draw(GraphicsContext context){
-        // draw background
+        // Draw background
         for(Background bg: bgs.values()){
             context.drawImage(bg.getImage(), bg.getX(), bg.getY());
         }
 
-        // then draw character
+        // Then draw CG
         for(Cg cg: cgs.values()){
             context.drawImage(cg.getImage(), cg.getX(), cg.getY());
         }
 
-        // add dialogue at the end
+        // Add dialogue part at the end
         if((message != null) && !(message.isEmpty())){
             dialogue.setName(nameToDisplay);
             dialogue.setText(message);
@@ -171,7 +172,7 @@ public class ScriptController implements Controller{
                     bgs.put(tokens[1], new Background(vars.get(tokens[1]), 0, 0));
                 }
             }else if("select".equals(tokens[0])){
-                // do nothing and proceed to the next line of code
+                // Do nothing and proceed to the next line of code
                 //choice.setButton();
 
             }else if("a.".equals(tokens[0])){
@@ -193,7 +194,7 @@ public class ScriptController implements Controller{
                     this.invokeScript();
                     break;
                 }else{
-                    // go to the next line
+                    // Simply go to the next line
                     continue;
                 }
             }
